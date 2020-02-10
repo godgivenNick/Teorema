@@ -1,0 +1,15 @@
+<svg id="gps-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="_2" data-name="2" transform="translate(8.953 10.453)">
+    <path id="Path_15022" data-name="Path 15022" d="M194.8,223a3.8,3.8,0,1,0,3.8,3.8A3.8,3.8,0,0,0,194.8,223Zm0,6a2.2,2.2,0,1,1,2.2-2.2A2.206,2.206,0,0,1,194.8,229Z" transform="translate(-191 -223)" fill="#d8242f"/>
+    <path id="Path_15026" data-name="Path 15026" d="M255.8,287a.8.8,0,1,0,.8.8A.8.8,0,0,0,255.8,287Z" transform="translate(-252 -284)" fill="#d8242f"/>
+  </g>
+  <g id="_1" data-name="1">
+    <path id="Path_15023" data-name="Path 15023" d="M90.219,117.213l-5.006,5.006,3.556,3.556a5.209,5.209,0,0,1,5.006-5.006Z" transform="translate(-81.219 -111.719)" fill="#cfd3d7"/>
+    <path id="Path_15025" data-name="Path 15025" d="M153.469,421.213l-4.256,4.256h8.511Z" transform="translate(-142.219 -401.469)" fill="#cfd3d7"/>
+    <path id="Path_15027" data-name="Path 15027" d="M8.112,250.325,3,245.213l-3,3v5.756a3.754,3.754,0,0,0,3.75,3.75H5.006l5.208-5.208A5.24,5.24,0,0,1,8.112,250.325Z" transform="translate(0 -233.719)" fill="#cfd3d7"/>
+    <path id="Path_15028" data-name="Path 15028" d="M223.469,0h-5.756l-4.5,4.5,5.006,5.006,8.141-8.141A3.744,3.744,0,0,0,223.469,0Z" transform="translate(-203.219)" fill="#cfd3d7"/>
+    <path id="Path_15029" data-name="Path 15029" d="M281.134,308.128a5.21,5.21,0,0,1-5.006,5.006l4.551,4.551h2.756a3.754,3.754,0,0,0,3.742-3.514Z" transform="translate(-263.185 -293.685)" fill="#cfd3d7"/>
+    <path id="Path_15030" data-name="Path 15030" d="M3.75,0A3.754,3.754,0,0,0,0,3.75v8.756L2.5,10h0l10-10Z" fill="#cfd3d7"/>
+    <path id="Path_15024" data-name="Path 15024" d="M352.543,56.688l-7.671,7.671a5.235,5.235,0,0,1,1.223,1.566l6.612,6.612V57.781A3.738,3.738,0,0,0,352.543,56.688Z" transform="translate(-328.706 -54.031)" fill="#cfd3d7"/>
+  </g>
+</svg>

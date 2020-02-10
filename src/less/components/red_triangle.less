@@ -1,0 +1,26 @@
+.triangle-red {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 16px 16px 0 0;
+    border-color: var(--teorema_red) transparent transparent transparent;
+}
+
+h1,h2,h3,h4,h5,h6,p,span {
+
+    position: relative;
+
+    & > .triangle-red {
+        position: absolute;
+        right: 100%;
+        bottom: 100%;
+    }
+}
+
+@media only screen and (max-width: 767.98px){
+
+    .triangle-red {
+        border-width: 12px 12px 0 0;
+    }
+
+}

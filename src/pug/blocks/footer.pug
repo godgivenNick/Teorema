@@ -1,0 +1,51 @@
+mixin social_link(icon_id)
+    a(href="javascript:void(0)")
+        svg
+            use(xlink:href= icon_id)
+
+footer.footer
+    .n-container
+        .footer-top
+            a.footer-top__logo(href="/" title="Главная")
+                img(src="./img/svg/logo_green.svg", alt="Главная")
+            .footer-top__row
+                a(href="") Бизнес-центры
+                a(href="") Аренда недвижимости
+                a(href="") Продажа недвижимости
+                a(href="") О компании
+                a(href="") Контакты
+            
+        .footer-menu
+            a(href="") Коммерческая недвижимость
+            a(href="") Аренда офисов
+            a(href="") Статьи
+            a(href="") Советы по аренде
+            a(href="") Сервисы на сайте
+            a(href="") Вопрос-ответ
+            a(href="") Отзывы
+            a(href="") Новости
+
+        .footer-content
+            .footer-content__left
+                p © 2019 УК «Теорема»,<br>Санкт-Петербург, Свердловская наб., 38, лит. Ж,<br> <a href="tel:+78123330444">+7 (812) 333-0-444</a><br>Часы работы отдела аренды: 9:30-18:00, кроме выходных
+            .footer-content__right
+                p Настоящий сайт и представленные на нем материалы носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
+            
+
+        .footer-bot
+            .footer-bot__col
+                a(href="javascript:void(0)") Политика конфиденциальности
+                a(href="javascript:void(0)") Условия пользования
+            .footer-bot__col
+                .footer-social
+                    +social_link('#telegram-icon')
+                    +social_link('#instagram-icon')
+                    +social_link('#facebook-icon')
+                    +social_link('#vk-icon')
+                    +social_link('#ok-icon')
+                    +social_link('#twitter-icon')
+                    +social_link('#whatsapp-icon')
+                    +social_link('#viber-icon')
+            .footer-bot__col
+                a(href="javascript:void(0)") Разработка сайта Digital Dinamics LSS,
+                a(href="javascript:void(0)") Дизайн сайта Midyanets

@@ -1,0 +1,53 @@
+.header-menu(header-item="menu")
+    .header-menu__container
+        .header-menu__row
+            .header-menu__col
+                .header-menu__title Бизнес-центры
+                .header-menu__list
+                    a(href="javascript:void(0)") Эврика
+                    a(href="javascript:void(0)") Н2О
+                    a(href="javascript:void(0)") Т4
+                    a(href="javascript:void(0)") Обуховъ-Центр
+                    a(href="javascript:void(0)") Лангензипен
+                    a(href="javascript:void(0)") Бенуа
+                    a(href="javascript:void(0)") 35-й корпус
+                    a(href="javascript:void(0)") Бизнес-Парк Полюстрово
+                    a(href="javascript:void(0)") Зима
+                    a(href="javascript:void(0)") Лето
+                    a(href="javascript:void(0)") Осень
+            .header-menu__col
+                .header-menu__title Арендаторы
+                .header-menu__list
+                    a(href="javascript:void(0)") Акции
+                    a(href="javascript:void(0)") Коммерческая недвижимость
+                    a(href="javascript:void(0)") Аренда офисов
+                    a(href="javascript:void(0)") Бизнес-центры
+                    a(href="javascript:void(0)") Статьи
+                    a(href="javascript:void(0)") Советы по аренде
+                    a(href="javascript:void(0)") Сервисы на сайте
+                    a(href="javascript:void(0)") Вопрос-ответ
+                    a(href="javascript:void(0)") Отзывы
+                    a(href="javascript:void(0)") Новости
+
+            <!-- Этот блок для планшетных и ниже версий. Продублировать сюды ссылки из шапки ( 4 шт.)  -->
+            .header-menu__col.d-none
+                .header-menu__title УК «Теорема»
+                .header-menu__list
+                    a(href="javascript:void(0)") Аренда недвижимости
+                    a(href="javascript:void(0)") Продажа недвижимости
+                    a(href="javascript:void(0)") О компании
+                    a(href="javascript:void(0)") Контакты
+
+        .header-search
+            .header-search__title Поиск по сайту
+            form(action="").header-search__form
+                input(placeholder="Введите поисковый запрос")
+                button(type="submit").header-search__btn
+                    <svg>
+                        <use xlink:href="#search-icon"></use>
+                    </svg>
+                    span Найти
+
+    ul.header-menu-banner
+        li <!-- сюды вставляем фреймы баннерные -->
+

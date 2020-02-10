@@ -1,0 +1,36 @@
+.table-order(style="display: none;")
+    .table-order__container(table-container="1312")
+
+        .table-order__header
+            .table-order__header-offer Заявка на просмотр <a href="tel:+78123330444"> +7 (812) 333-0-444</a>
+            button.table-order__header-close
+                span
+
+        .table-order__head
+            .table-order__head-label(order-col='1') Выбранные помещения
+            .table-order__head-label(order-col='2') Бизнес-центр
+            .table-order__head-label(order-col='3') Этаж
+            .table-order__head-label(order-col='4') Площадь
+            .table-order__head-label(order-col='5') Стоимость
+
+        .table-order__body
+            include table_order_item.pug
+
+        .table-order__footer
+            form(action="").table-order-form
+                .table-order-form__row
+                    input(placeholder="Ваше имя*" table-input='1').table-order-form__input
+                    input(placeholder="Эл. почта*" table-input='2').table-order-form__input
+                    input(placeholder="Телефон для связи*" table-input='3').table-order-form__input
+
+                    .table-order-form__select
+                        select
+                            option
+                            option(value="1") 10:00 - 11:00
+                            option(value="2") 11:00 - 12:00
+                            option(value="3") 12:00 - 13:00
+                button.table-order-form__submit-btn Отправить заявку
+
+            .table-order-form__success(style="display: none;") Заявка успешно отправлена! Мы свяжемся с вами в течение 30 минут.
+            
+            .table-order__footer-desc Нажимая на кнопку, вы принимаете <a href="javascript:void(0)">условия</a> пользовательского соглашения на обработку персональных данных.

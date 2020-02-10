@@ -1,0 +1,38 @@
+.table
+
+    <!-- *Новый элемент, виден тока на мобилке -->
+    .table__offer
+        span В акции 666 помещений
+
+    <!-- **Новый элемент, виден тока на мобилке, заменяет сортировку через шапку таблицы -->
+    .table__sort
+        .table__sort-select
+            select
+                option(value="1") цена по возрастанию
+                option(value="2") цена по убыванию
+                option(value="3") площадь по возрастанию
+                option(value="4") площадь по убыванию
+
+    .table-head__full
+        .table-head(table-container="1312")
+            .table-head__label(table-col="1") Свободно 666 помещений 
+            a(href="javascript:void(0)" table-col="2").table-head__label.table-head__sort-square.active 
+                span Площадь
+            a(href="javascript:void(0)" table-col="3").table-head__label.table-head__sort-price 
+                span Стоимость
+            .table-head__label(table-col="4") Ставка
+            .table-head__label(table-col="5").table-head__compare
+                div Сравнение <span>3</span>
+            .table-head__label(table-col="6").table-head__order
+                div Заявка <span>3</span>
+    .table-body
+        include table_order.pug
+        include table_compare.pug
+
+        .table-body__list(table-container="1312")
+            include table_room_item.pug
+
+        .table-body__ctrls
+            button.table-body__ctrl-btn Показать еще
+            button.table-body__ctrl-btn Скрыть
+

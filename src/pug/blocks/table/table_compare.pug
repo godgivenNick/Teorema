@@ -1,0 +1,36 @@
+.table-compare(style="display: none;")
+    .table-compare__container(table-container="1312")
+
+        .table-compare__header
+            button.table-compare__header-close
+                span
+
+        .table-compare__head
+            .table-compare__head-label(compare-col='1') Помещение
+            .table-compare__head-label(compare-col='2') Бизнес-центр
+            .table-compare__head-label(compare-col='3') Класс
+            .table-compare__head-label(compare-col='4') Адрес
+            .table-compare__head-label(compare-col='5') Этаж
+            .table-compare__head-label(compare-col='6') Контроль доступа
+            .table-compare__head-label(compare-col='7') Видовое
+            .table-compare__head-label(compare-col='8') Перегородки
+            .table-compare__head-label(compare-col='9') Акции
+            .table-compare__head-label(compare-col='10') Площадь, м² 
+            .table-compare__head-label(compare-col='11') Цена, ₽/мес.
+            label.table-compare__head-checkbox.table-compare__checkbox(compare-col='12')
+                input(type="checkbox")
+                span
+            a(compare-col='13' href="javascript:void(0)").table-compare__head-delete.table-compare__delete
+                svg
+                    use(xlink:href="#delete-12-icon")
+
+        .table-compare__body
+            include table_compare_item.pug
+
+        .table-compare__help
+            .table-compare__help-img
+                img(src="../img/svg/notice.svg")
+            p.table-compare__help-text Чтобы добавить подходящие помещения к заявке на просмотр отметьте их галочкой в крайнем правом столбце
+
+        <!-- [1] кнопка появляетяс после того как хотя бы 1 помещение чекнули, а подсказка с классом '.table-compare__help' пропадает. [2] По клику на кнопку "добавить к заявке" открываем таблицу с Заявками, а Сравнения - закрываем ( закрытие сравнения в той же функции, что открывает Заявки ) -->
+        button.table-compare__add-btn(style="display: none;") Добавить к заявке

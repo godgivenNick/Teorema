@@ -1,0 +1,187 @@
+//- чекбоксы
+mixin filter_checkbox(text)
+    label.filter-checkbox
+        input(type="checkbox" name="filter_checkboxes")
+        span.filter-checkbox__box
+        span.filter-checkbox__label= text
+
+//- колбаса с кнопочками выбиралками ( этажи и тт.д.)
+mixin grey_sausage_btn(text)
+    label.sausage-item
+        input(type="checkbox" name="filter_class")
+        span= text
+
+//- серая кнопка-чекбокс
+mixin grey_checkbox_btn(text)
+    label.btn--grey
+        input(type="checkbox" name="filter_fast_choice")
+        span= text
+
+.filter(header-item="filter")
+    .filter__container
+        .filter__col
+
+            <!-- Чекбоксы -->
+            .filter__checkboxes
+                label.filter-checkbox
+                    input(type="checkbox" name="filter_checkboxes")
+                    span.filter-checkbox__box
+                    span.filter-checkbox__label Офисное
+                +filter_checkbox('Универсальное')
+                +filter_checkbox('Торговое')
+                +filter_checkbox('Складское')
+
+            
+            <!-- Колбаса из дропдаунов и пр. мути, да будут прокляты вадик и его выебоны -->
+            .filter-main
+                .filter-main__wrap(filter-select="district")
+                    select.filter-main__select(multiple="multiple")
+                        option(value="1") Калининский
+                        option(value="2") Невский
+                        option(value="3") Красногвардейский
+                        option(value="4") Петроградский
+                        option(value="5") Центральный
+
+                .filter-main__wrap(filter-select="bc")
+                    select.filter-main__select(multiple="multiple")
+                        option(value="Эврика") Эврика
+                        option(value="H2O") H2O
+                        option(value="Т4") Т4
+                        option(value="Обуховъ-Центр") Обуховъ-Центр
+                        option(value="Лангензипен") Лангензипен
+                        option(value="Бенуа") Бенуа
+                        option(value="35-й корпус") 35-й корпус
+                .filter-main__wrap(filter-range="sqr" max="1013" min="17")
+                    .filter-main__input
+                        .filter-main__input-label Площадь
+                        input(type="text" min)
+                        input(type="text" max)
+                        .filter-main__input-label м<sup>2</sup>
+                        .filter-main__input-range
+                .filter-main__wrap(filter-range="price" max="1922800" min="22100")
+                    .filter-main__input
+                        .filter-main__input-label Цена
+                        input(type="text" min)
+                        input(type="text" max)
+                        .filter-main__input-label(id="filter_range_rent_value" value='["₽/мес.", "₽/м<sup>2</sup>"]') ₽/мес.
+                        .filter-main__input-range
+           
+
+
+            .filter__row.filter__row--bwn
+
+                <!-- Выбор класса БЦ -->
+                .filter-box
+                    span.filter-box__label Класс
+                    .filter-box__content.filter-box__content--sausage
+                        label.sausage-item
+                            input(type="checkbox" name="filter_class")
+                            span любой
+                        +grey_sausage_btn('A')
+                        +grey_sausage_btn('B+')
+
+                <!-- Выбор этажа -->
+                .filter-box
+                    span.filter-box__label Этаж
+                    .filter-box__content.filter-box__content--sausage
+                        label.sausage-item
+                            input(type="checkbox" name="filter_floor")
+                            span любой
+                        +grey_sausage_btn('подвал')
+                        +grey_sausage_btn('цоколь')
+                        +grey_sausage_btn('1')
+                        +grey_sausage_btn('2')
+                        +grey_sausage_btn('3')
+                        +grey_sausage_btn('4')
+                        +grey_sausage_btn('5')
+                        +grey_sausage_btn('6')
+                        +grey_sausage_btn('7')
+                        +grey_sausage_btn('8')
+                        +grey_sausage_btn('9')
+                        +grey_sausage_btn('10')
+                        +grey_sausage_btn('11')
+                        +grey_sausage_btn('12')
+                
+                .filter__map-btn
+                    span.filter__map-btn--icon
+                    span На карте
+
+
+            <!-- Быстрый выбор -->
+            .filter-box
+                span.filter-box__label Быстрый выбор
+                .filter-box__content.filter-box__content--row
+                    +grey_checkbox_btn('с перегородками')
+                    +grey_checkbox_btn('без перегородками')
+                    +grey_checkbox_btn('по акции')
+                    +grey_checkbox_btn('без контроля доступа')
+                    +grey_checkbox_btn('видовое')
+                    +grey_checkbox_btn('КАД')
+                    +grey_checkbox_btn('последний этаж')
+                    +grey_checkbox_btn('весь этаж')
+
+
+        <!-- Кнопки Сбросить/Применить фильтр -->
+        .filter__ctrls
+            button.filter__clear-btn
+                span.filter__clear-btn--close
+                span Сбросить фильтр
+            button.filter__submit-btn Найти (666)
+
+    .filter-bc__wrap
+        .filter__container.filter-bc
+            ul.filter-bc__list
+                li.filter-bc__item
+                    .filter-bc__head
+                        .filter-bc__logo
+                            img(src="./img/png/filter_bc_logo_example_1.png")
+                        .filter-bc__class(bc-class="B+")
+                    a(href="javascript:void(0)").filter-bc__address пр. Обуховской Обороны 271А
+                    ul.filter-bc__chars
+                        li
+                            span Район
+                            span Невский
+                        li
+                            span Общая площадь
+                            span 33 500 м2
+                        li
+                            span Парковка
+                            span 540 мест
+                    a(href="javascript:void(0)").filter-bc__btn Смотреть помещения (666)
+                li.filter-bc__item
+                    .filter-bc__head
+                        .filter-bc__logo
+                            img(src="./img/png/filter_bc_logo_example_1.png")
+                        .filter-bc__class(bc-class="B+")
+                    a(href="javascript:void(0)").filter-bc__address пр. Обуховской Обороны 271А
+                    ul.filter-bc__chars
+                        li
+                            span Район
+                            span Невский
+                        li
+                            span Общая площадь
+                            span 33 500 м2
+                        li
+                            span Парковка
+                            span 540 мест
+                    a(href="javascript:void(0)").filter-bc__btn Смотреть помещения (666)
+                li.filter-bc__item
+                    .filter-bc__head
+                        .filter-bc__logo
+                            img(src="./img/png/filter_bc_logo_example_1.png")
+                        .filter-bc__class(bc-class="B+")
+                    a(href="javascript:void(0)").filter-bc__address пр. Обуховской Обороны 271А
+                    ul.filter-bc__chars
+                        li
+                            span Район
+                            span Невский
+                        li
+                            span Общая площадь
+                            span 33 500 м2
+                        li
+                            span Парковка
+                            span 540 мест
+                    a(href="javascript:void(0)").filter-bc__btn Смотреть помещения (666)
+
+            .filter-bc__map
+                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.4584604592787!2d37.736840716089695!3d55.78527669695414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5353d8efe8cd9%3A0x1d5e280b7b09c6cb!2z0KTQvtGA0YLRg9C90LDRgtC-0LLRgdC60LDRjyDRg9C7LiwgMzEvMzUsINCc0L7RgdC60LLQsCwgMTA1MTg3!5e0!3m2!1sru!2sru!4v1562327751668!5m2!1sru!2sru" allowfullscreen="" width="100%" height="100%" frameborder="0")

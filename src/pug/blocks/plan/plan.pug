@@ -1,0 +1,40 @@
+.plan
+    a(href="javascript:void(0)").plan__back-btn(style="display: none") Вернуться к фасаду
+    .plan__head
+        p Выберите этаж, чтобы посмотреть планировки
+        .plan__floors
+            a(href="javascript:void(0)").plan__floor-btn.empty цоколь
+            a(href="javascript:void(0)").plan__floor-btn 1
+            a(href="javascript:void(0)").plan__floor-btn 2
+            a(href="javascript:void(0)").plan__floor-btn.empty 3
+            a(href="javascript:void(0)").plan__floor-btn 4
+            a(href="javascript:void(0)").plan__floor-btn 5
+            a(href="javascript:void(0)").plan__floor-btn 6
+            a(href="javascript:void(0)").plan__floor-btn 7
+            a(href="javascript:void(0)").plan__floor-btn 8
+            a(href="javascript:void(0)").plan__floor-btn 9
+            a(href="javascript:void(0)").plan__floor-btn 10
+    .plan__plan.plan__bc-plan
+        <!-- Элемент под планировку здания -->
+        .plan__plan-footer
+            span Есть свободные помещения
+            span Нет свободных помещений
+    
+    .plan__plan.plan__floor-plan(style="display: none")
+        <!-- Элемент под планировку этажа -->
+
+        .plan__plan-container
+
+            include plan_legend.pug
+            include plan_clients.pug
+
+        .plan__cta
+            h6.plan__cta-title Оставьте заявку на просмотр
+                span.triangle-red
+            a(href="javascript:void(0)").plan__cta-btn Оставить заявку
+
+    .plan-tooltip
+        .plan-tooltip__office Офис 1/2/3/4
+        .plan-tooltip__sqr 666 м²
+        .plan-tooltip__price 1 700 ₽/м²/месяц
+

@@ -1,0 +1,42 @@
+.btn--grey {
+    input {
+        display: none;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        height: 40px;
+    
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: var(--text_medium_grey);
+        background-color: var(--teorema_omg_perdal);
+        border: 1px solid transparent;
+        border-radius: 3px;
+    
+        transition: .2s ease-out;
+    }
+
+    &:hover {
+        span {
+            border-color: var(--text_medium_grey);
+        }
+
+        input:checked + span {
+            border-color: transparent;
+        }
+    }
+
+
+    input:checked + span,
+    &:active span {
+        background-color: #E3EFF9;
+        color: var(--text_dark_grey); 
+    }
+
+}

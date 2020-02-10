@@ -1,0 +1,45 @@
+header.header
+    <!-- Закрепленная видимая шапка -->
+    .header-top
+
+        a(href="/" title="Teorema.info").header-top__logo
+            img(src="./img/svg/logo_white.svg", alt="Teorema")
+
+        .header-top__middle
+            nav.header-top__menu
+                a(href="javascript:void(0)") Аренда недвижимости
+                a(href="javascript:void(0)") Продажа недвижимости
+                a(href="javascript:void(0)") О компании
+                a(href="javascript:void(0)") Контакты
+            a.header-top__tel(href="tel: +78123330444") 
+                span.header-top__tel--number +7 (812) 333-0-444
+                <svg class="header-top__tel--icon">
+                    <use xlink:href="#phone-icon"></use>
+                </svg>
+        
+        .header-top__ctrls
+        
+            a(href="javascript:void(0)" header-btn="filter").header-top-btn
+                <svg>
+                    <use xlink:href="#filter-icon"></use>
+                </svg>
+                span.header-top-btn__title Найти помещение
+
+            a(href="javascript:void(0)" header-btn="menu").header-top-btn
+                <svg>
+                    <use xlink:href="#burger-icon"></use>
+                </svg>
+                span.header-top-btn__title Меню
+    
+    .header-bottom
+        .header-bottom__container
+            a(href="javascript:void(0)") Эврика
+            a(href="javascript:void(0)") H2O
+            a(href="javascript:void(0)") Т4
+            a(href="javascript:void(0)") Обуховъ-центр
+            a(href="javascript:void(0)") Лангензипен
+            a(href="javascript:void(0)") Бенуа
+            a(href="javascript:void(0)") 35-й корпус
+
+    include header_menu.pug
+    include ../filter/filter.pug

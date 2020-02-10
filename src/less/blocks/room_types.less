@@ -1,0 +1,241 @@
+.room-types {
+
+    padding-top: 80px;
+
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 24px;
+        line-height: 1.33;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+
+        margin-bottom: 56px;
+    }
+}
+
+
+.room-types-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+
+
+    & > a:not(.room-types-card__download) {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        margin-bottom: 16px;
+
+
+        &:hover {
+            .room-types-card__name, h1,h2,h3,h4,h5,h6 {
+                color: var(--teorema_green);
+            }
+
+            img {
+                transform: scale(1.07);
+            }
+
+        }
+    }
+
+
+    &__img {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid var(--teorema_omg_perdal);
+        border-radius: 4px;
+
+        margin-bottom: 24px;
+
+        img {
+            width: 100%;
+            max-width: 100%;
+            transition: .25s ease-out;
+            transform-origin: center center;
+        }
+    }
+
+
+    &__name, h1,h2,h3,h4,h5,h6 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 1.6px;
+        color: var(--text_dark_grey);
+        text-transform: uppercase;
+
+        transition: .2s ease;
+    }
+
+
+    &__sqr {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.71;
+        color: var(--text_dark_grey);
+
+        margin-bottom: 8px;
+    }
+
+
+    &__desc, & > p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.43;
+        color: var(--text_medium_grey);
+    }
+
+
+    &__download {
+        display: flex;
+        align-items: center;
+
+        margin-top: auto;
+
+        span {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 1.6px;
+            color: var(--text_dark_grey);
+            text-transform: uppercase;
+
+            transition: .2s ease;
+        }
+    }
+
+
+    &__download-icon {
+        display: flex;
+        width: 14px;
+        height: 17px;
+
+        position: relative;
+        overflow: hidden;
+        margin-right: 12px;
+
+        &::before {
+
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: #7F8A93;
+            transition: .2s ease-out;
+        }
+
+
+        span {
+            transition: .2s ease-out;
+
+            width: 14px;
+            height: 13px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &.default { background-image: url('../img/svg/arrow_download_grey.svg'); }
+            &.hovered { background-image: url('../img/svg/arrow_download_green.svg'); }
+
+            &.default {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &.hovered {
+                position: absolute;
+                top: -14px;
+                left: 0;
+            }
+        }
+    }
+
+    &__download:hover {
+
+        & > span {
+            color: var(--teorema_green);
+        }
+
+        .room-types-card__download-icon {
+
+            &::before {
+                background-color: var(--teorema_green);
+            }
+        }
+
+        .default {
+            top: 100%;
+        }
+
+        .hovered {
+            top: 0;
+        }
+    }
+
+
+
+
+    &.empty {
+
+        & > a:not(.room-types-card__download) {
+            pointer-events: none;
+        }
+
+        .room-types-card__sqr {
+            color: var(--teorema_red);
+        }
+
+    }
+}
+
+
+
+@media only screen and (max-width: 1366px){
+
+
+
+}
+
+
+@media only screen and (max-width: 767.98px){
+    
+    .room-types {
+        padding-top: 64px;
+    }
+
+
+    .room-types-card {
+        
+        &__img {
+            margin-bottom: 16px;
+
+        }
+
+        &__name, h1,h2,h3,h4,h5,h6 {
+            font-size: 14px;
+        }
+
+
+        &__sqr {
+            font-size: 12px;
+        }
+
+
+        & > p, &__desc {
+            font-size: 12px;
+        }
+
+    }
+
+
+}

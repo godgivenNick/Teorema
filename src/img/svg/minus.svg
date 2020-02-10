@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="уменьшить" opacity="0.4">
+    <rect id="bg" width="32" height="32" rx="4" fill="#7f8b93" opacity="0.5"/>
+    <path id="_-" data-name="-" d="M6,9.2v1.6h8V9.2ZM10,2a8,8,0,1,0,8,8A8.013,8.013,0,0,0,10,2Zm0,14.4A6.4,6.4,0,1,1,16.4,10,6.409,6.409,0,0,1,10,16.4Z" transform="translate(6 6)" fill="#f9f9f9"/>
+  </g>
+</svg>

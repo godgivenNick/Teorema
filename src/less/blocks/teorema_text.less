@@ -1,0 +1,131 @@
+.teorema-text {
+
+
+    padding-top: 80px;
+
+    .n-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 16px;
+        margin-right: 32px;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            color: var(--text_dark_grey);
+
+            a {
+                color: var(--teorema_green);
+                text-decoration: underline;
+                &:hover,
+                &:active {
+                    text-decoration-color: transparent;
+                }
+            }
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+
+        width: 528px;
+        flex-shrink: 0;
+
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            text-align: left;
+            font-weight: 400;
+            color: var(--text_dark_grey);
+
+            b {
+                font-weight: 700;
+            }
+
+            a {
+                color: var(--teorema_green);
+                text-decoration: underline;
+                &:hover,
+                &:active {
+                    text-decoration-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px){
+
+    .teorema-text {
+
+        h1,h2,h3,h4,h5,h6 {
+            width: 420px;
+        }
+
+    }    
+
+}
+
+
+@media only screen and (max-width: 767.98px){
+
+    .teorema-text {
+        padding-top: 64px;
+
+        .n-container {
+            flex-direction: column;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 24px;
+            width: 100%;
+            margin-left: 12px;
+        }
+
+
+        &__left {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 24px;
+
+            p {
+                font-size: 12px;
+                margin-left: 12px;
+            }
+        }
+
+
+        &__right {
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+    }
+
+}

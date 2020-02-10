@@ -1,0 +1,46 @@
+section.n-block.n-block--bordered.room-types
+    .n-container
+        h3 Типы помещений в здании
+        .cards-x3
+            .room-types-card
+                a(href="javascript:void(0)")
+                    .room-types-card__img
+                        img(src="./img/png/room_types_example_1.png")
+                    .room-types-card__name Офисные помещения
+                    .room-types-card__sqr От 7 м<sup>2</sup> до 150 м<sup>2</sup>
+                    p.room-types-card__desc Помещения идеально подойдут для клиентских офисов: SPA-салонов, языковых школ, косметологии, банкинга и других компаний. Дополнительной выгодой является деловая активность района и огромное количество платежеспособной аудитории.
+                a(href="javascript:void(0)").room-types-card__download
+                    .room-types-card__download-icon
+                        span.default
+                        span.hovered
+                    span Скачать договор аренды
+
+            .room-types-card
+                a(href="javascript:void(0)")
+                    .room-types-card__img
+                        img(src="./img/png/room_types_example_2.png")
+                    .room-types-card__name Универсальные помещения
+                    .room-types-card__sqr От 20 м<sup>2</sup> до 350 м<sup>2</sup>
+                    p.room-types-card__desc Помещения идеально подойдут для клиентских офисов: SPA-салонов, языковых школ, косметологии, банкинга и других компаний. Дополнительной выгодой является деловая активность района.
+                a(href="javascript:void(0)").room-types-card__download
+                    .room-types-card__download-icon
+                        span.default
+                        span.hovered
+                    span Скачать договор аренды
+                    
+            .room-types-card.empty
+                a(href="javascript:void(0)")
+                    .room-types-card__img
+                        img(src="./img/png/room_types_example_1.png")
+                    .room-types-card__name Офисные помещения
+                    .room-types-card__sqr Нет свободных
+                    p.room-types-card__desc Помещения идеально подойдут для клиентских офисов: SPA-салонов, языковых школ, косметологии, банкинга и других компаний. Дополнительной выгодой является деловая активность района и огромное количество платежеспособной аудитории.Дополнительной выгодой является деловая активность района.
+                a(href="javascript:void(0)").room-types-card__download
+                    .room-types-card__download-icon
+                        span.default
+                        span.hovered
+                    span Скачать договор аренды
+
+
+
+<!-- [1] - Если нет помещений, к ".room-types-card" добавляем класс ".empty" , а текст внутри ".room-types-card__sqr" == "Нет свободных" -->

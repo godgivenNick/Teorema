@@ -1,0 +1,25 @@
+.table-order__item
+    a.table-order__item-value(order-col='1' href="javascript:void(0)") Офисное помещение № 731, этаж 4/7
+    .table-order__item-value(order-col='2') «Лангензипен»
+    .table-order__item-value(order-col='3') Подвал
+    .table-order__item-value(order-col='4') 55 м²
+    .table-order__item-value(order-col='5') 9 999 999 ₽/мес.
+    a(order-col='6' href="javascript:void(0)").table-order__delete
+        svg
+            use(xlink:href="#delete-12-icon")
+        span.table-order__delete-default Удалить
+        span.table-order__delete-return Отменить удаление
+
+.table-order__item.deleted
+    a.table-order__item-value(order-col='1' href="javascript:void(0)") Офисное помещение № 731, этаж 4/7
+    .table-order__item-value(order-col='2') «Лангензипен»
+    .table-order__item-value(order-col='3') Подвал
+    .table-order__item-value(order-col='4') 55 м²
+    .table-order__item-value(order-col='5') 9 999 999 ₽/мес.
+    a(order-col='6' href="javascript:void(0)").table-order__delete
+        svg
+            use(xlink:href="#delete-12-icon")
+        span.table-order__delete-default Удалить
+        span.table-order__delete-return Отменить удаление
+
+<!-- После того, как чувак нажал Удалить, к ряду с классом '.table-order__item' добавляем класс '.deleted', чтобы была возможность отменить удаление -->

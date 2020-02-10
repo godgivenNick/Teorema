@@ -1,0 +1,44 @@
+section.n-block.bc-dropdown-list
+    .n-container.bc-dropdown-list__n-container
+
+        .n-dropdown
+            .n-dropdown__heading
+                h4.n-dropdown__heading-title Планировки
+                p.n-dropdown__heading-sub-title Выберите доступные помещения на интерактивном плане
+                .n-dropdown__heading-arrow
+            .n-dropdown__content
+                <!-- Планировка -->
+                include ./plan/plan.pug
+
+        .n-dropdown(data-bc-dropdown="table")
+            .n-dropdown__heading
+                h4.n-dropdown__heading-title Акция
+                    span.triangle-red
+                p.n-dropdown__heading-sub-title Предложение для новых арендаторов
+                .n-dropdown__heading-arrow
+            .n-dropdown__content
+                <!-- Таблица с помещениями -->
+                include ../blocks/table/table_room.pug
+        .n-dropdown
+            .n-dropdown__heading
+                h4.n-dropdown__heading-title Услуги и оснащение
+                p.n-dropdown__heading-sub-title Узнайте, как мы обеспечиваем комфорт и безопасность
+                .n-dropdown__heading-arrow
+            .n-dropdown__content
+                include bc_services_x3.pug
+        .n-dropdown
+            .n-dropdown__heading
+                h4.n-dropdown__heading-title Веб-камера в ресторане
+                p.n-dropdown__heading-sub-title Отслеживайте загруженность точек питания в час пик
+                .n-dropdown__heading-arrow
+            .n-dropdown__content
+                .bc__cam
+                    img(src="./img/jpg/video_cam.jpg")
+        .n-dropdown
+            .n-dropdown__heading
+                h4.n-dropdown__heading-title Виртуальный тур
+                p.n-dropdown__heading-sub-title Прогуляйтесь по зданию прямо сейчас
+                .n-dropdown__heading-arrow
+            .n-dropdown__content
+                .bc__virtual
+                    img(src="./img/jpg/virtual.jpg")

@@ -1,0 +1,43 @@
+doctype html
+html(lang="ru")
+	head
+		include carcass/head.pug
+
+	body
+
+		<!-- Шапка -->
+		include blocks/header/header.pug
+
+		<!-- Video example -->
+		include blocks/video/teorema_video.pug
+
+		//- <!-- Страница "БЦ" -->
+		//- include pages/bc_page.pug
+
+		<!-- Страница "Акции" -->
+		include pages/spoffer.pug
+
+		<!-- Footer -->
+		include blocks/footer.pug
+
+		<!-- Подрубка общих скриптов и библ. -->
+		script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js")
+
+		script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+		//- script(type="application/javascript" src='./js/jquery.fancybox.min.js')
+		script(type="application/javascript" src='./js/slick.min.js')
+
+		script(type="application/javascript" src='./js/filter.js')
+		script(type="application/javascript" src='./js/main.js')
+		script(type="application/javascript" src='./js/table.js')
+
+		//- video
+		//- script(type="application/javascript" src='https://vjs.zencdn.net/7.2.3/video.js')
+		//- script(type="application/javascript" src='//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js')
+		//- script(type="application/javascript" src='//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js')
+		//- script(type="application/javascript" src='./js/video.js')
+
+		<!-- sprite с svg-иконками -->
+		div#teorema_sprite
+			include components/sprite.pug
