@@ -438,5 +438,61 @@ if(document.querySelector('.form-callback')){
 }
 
 
+
+
+//  [ 12.02 ]
+
+
+//  переключение табов + ползунок
+window.calc_f_results_toddler = function(){
+
+    // 1 шаг - инициализация
+    var f_results_tab_container = $('.filter-result-tabs'),
+        f_results_tab_toddler = f_results_tab_container.find('.filter-result-tabs__toddler');
+
+    var f_results_tab_active = $('.filter-result-tabs__tab.active'),
+        f_results_tab_active_width = f_results_tab_active.width(),
+        f_results_tab_active_left = f_results_tab_active.position().left,
+        f_results_tab_active_marginLeft = f_results_tab_active.css('margin-left');
+    
+    f_results_tab_toddler.css({
+        'width' : f_results_tab_active_width,
+        'left' : f_results_tab_active_left + parseInt(f_results_tab_active_marginLeft, 10) + 'px',
+        'display' : 'block',
+    });
+};
+
+window.f_results_click_handler = function(){
+
+    // 2 шаг - обработка кликов
+    $('.filter-result-tabs__tab').click(function(){
+
+        if( !$(this).hasClass('active') ){
+
+            //  убрать актив
+            $('.filter-result-tabs__tab.active').removeClass('active');
+
+            // добавить актив
+            $(this).addClass('active');
+
+            // переместить ползунок
+            window.calc_f_results_toddler();
+        } else {
+            return;
+        }
+        
+
+    });
+};
+
+setTimeout(function(){
+    window.calc_f_results_toddler();
+    window.f_results_click_handler();
+}, 10);
+$(window).resize(function(){
+    window.calc_f_results_toddler();
+});
+
+
 //  END
 });

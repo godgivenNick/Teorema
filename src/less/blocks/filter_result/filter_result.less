@@ -1,0 +1,56 @@
+.filter-result {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.filter-result-tabs {
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    width: 100%;
+    max-width: 1344px;
+
+    display: flex;
+    justify-content: center;
+
+    border-bottom: 1px solid #CFD3D7;
+
+    position: relative;
+}
+
+
+.filter-result-tabs__tab {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    color: var(--text_dark_grey);
+
+    text-transform: uppercase;
+
+    padding-bottom: 16px;
+
+    &:not(:first-of-type){
+        margin-left: 70px;
+    }
+
+    &.active {
+        color: var(--teorema_green);  
+    }
+}
+
+
+.filter-result-tabs__toddler {
+    display: none;
+    width: 100px;
+    height: 3px;
+    background-color: var(--teorema_green);
+
+    transition: .2s ease;
+
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+}
