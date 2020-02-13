@@ -494,5 +494,39 @@ $(window).resize(function(){
 });
 
 
+
+
+//  [ 13.02 ]
+
+//  Галерея в карточках бизнес-центров, стр. "Результат фильтрации по БЦ"
+
+window.init_table_bc_galery_each = function(){
+
+    $('.table-bc__galery').each(function(){
+        $(this).slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+            dotsClass: 'table-bc__galery-dots',
+            // appendDots: '.bc-galery-slider',
+            responsive: [
+        
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                },
+            ]
+        });
+    });
+
+};
+window.init_table_bc_galery_each();
+
+
 //  END
 });

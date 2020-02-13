@@ -61,7 +61,7 @@ $('.table-order__header-close').click(function(){
 
 
 
-//  показать карту
+//  показать карту в таблице помещений
 $('.table-room__onmap').click(function(){
 
     var table_map_btn = $(this),
@@ -90,7 +90,7 @@ $('.table-room__onmap').click(function(){
 });
 
 
-//  показать планировку
+//  показать планировку в таблице помещений
 $('.table-room__onplan').click(function(){
     var table_plan_btn = $(this),
         table_plan = $(this).closest('.table-room').find('.table-room__plan'), 
@@ -205,3 +205,27 @@ $(window).resize(function(){
     window.redo_office_name();
 });
 
+
+
+
+//  13.02
+
+//  показать карту в таблице бизнес-центров
+$('.table-bc__onmap').click(function(){
+
+    var table_map_btn = $(this),
+        table_map = $(this).closest('.table-bc').find('.table-bc__map');
+
+    if(!table_map_btn.hasClass('active')){
+
+        table_map_btn.addClass('active');
+        table_map_btn.find('span').text('Скрыть карту');
+
+        table_map.fadeIn();
+
+    } else {
+        table_map_btn.removeClass('active');
+        table_map_btn.find('span').text('На карте');
+        table_map.fadeOut();
+    }
+});

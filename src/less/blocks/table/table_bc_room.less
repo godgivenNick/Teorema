@@ -1,0 +1,66 @@
+[table-container="1090"]{
+    width: 1090px;
+}
+
+[bc-room-col="1"]{
+    width: 330px;
+}
+[bc-room-col="2"]{
+    width: 110px;
+}
+[bc-room-col="3"]{
+    width: 190px;
+}
+[bc-room-col="4"]{
+    width: 153px; 
+}
+[bc-room-col="5"]{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+}
+[bc-room-col="6"]{
+    width: 192px;
+    margin-left: auto;
+}
+
+
+.table__table-bc-room {
+    // класс контейнер для манипуляций с содержимым этой таблицы
+
+    .table-room__img {
+        margin-right: 0;
+    }
+
+    .table-room__onplan {
+        margin: 0 auto;
+    }
+
+    .table-head__full {
+        background: white;
+    }
+
+    .table-head {
+        height: 32px;
+    }
+
+    .table-head__label {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .table-body__list {
+        width: 100%;
+    }
+
+    .table-room {
+        align-items: center;
+    }
+
+    .table-head__sort-square span::after,
+    .table-head__sort-price span::after {
+        width: 8px;
+        height: 4px;
+        left: calc(100% + 3px);
+    }
+}
