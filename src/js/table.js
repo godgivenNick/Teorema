@@ -121,20 +121,36 @@ $('.table-room__onplan').click(function(){
 
 
 //  дропдаун для таблицы Заявка
-$('.table-order-form__select select').select2({
-    placeholder: "Удобное время для звонка",
-    dropdownParent: $('.table-order-form__select'),
+$('.table-order-form__select select').each(function(){
+    $(this).select2({
+        placeholder: "Удобное время для звонка",
+        dropdownParent: $(this).closest('.table-order-form__select'),
+    });
 });
+
+// $('.table-order-form__select select').select2({
+//     placeholder: "Удобное время для звонка",
+//     dropdownParent: $('.table-order-form__select'),
+// });
+
 $('.table-order-form__select select').on('select2:opening select2:closing', function( event ) {
     var $searchfield = $(this).parent().find('.select2-search__field');
     $searchfield.prop('disabled', true);
 });
 
 //  дропдаун для сортировки помещений
-$('.table__sort-select select').select2({
-    placeholder: "Сортировать",
-    dropdownParent: $('.table__sort-select'),
+$('.table__sort-select select').each(function(){
+    $(this).select2({
+        placeholder: "Сортировать",
+        dropdownParent: $(this).closest('.table__sort-select'),
+    });
 });
+
+// $('.table__sort-select select').select2({
+//     placeholder: "Сортировать",
+//     dropdownParent: $('.table__sort-select'),
+// });
+
 $('.table__sort-select select').on('select2:opening select2:closing', function( event ) {
     var $searchfield = $(this).parent().find('.select2-search__field');
     $searchfield.prop('disabled', true);
@@ -228,4 +244,52 @@ $('.table-bc__onmap').click(function(){
         table_map_btn.find('span').text('На карте');
         table_map.fadeOut();
     }
+});
+
+
+//  Открытие списка помещений в таблицы Бизнес-центров ( открыт может быть только один лист с помещениями)
+
+$('.table-bc__show-btn').each(function(){
+
+    // переменные для последующей логики
+    var show_room_table_btn = $(this),
+        show_room_table_btn_HTML = $(this).html(),
+        show_room_table_btn_TRANSITION = $(this).css('transition-duration'),
+
+        show_room_table_btn_COUNT_VALUE = $(this).find('.table-bc__show-btn--amount').text(),
+        show_room_table_btn_COUNT_HTML = `<span class="table-bc__show-btn--amount">${show_room_table_btn_COUNT_VALUE}</span>`;
+
+    
+    //  записываю html кнопки в её [data-show-room-html],
+    //  чтобы реализовать зависимое скрытие/раскрытие таблиц помещений
+    //  Открыли выгрузку по БЦ-1 ==> Открыли выгрузку по БЦ-2 && Закрыли выгрузку по БЦ-1
+
+    // $(this).attr('')
+    // !!! лучше сделать через скрытый массив и id каждого БЦ, а то ебанешься
+
+        
+
+    //  обработка клика
+    show_room_table_btn.click(function(){
+
+        var bc_table = $(this).closest('.table-bc'),
+            bc_table_room = bc_table.find('.table__table-bc-room');
+
+        if(!$(this).hasClass('active')){
+            $(this).addClass('active');
+            bc_table_room.fadeIn();
+
+            show_room_table_btn.html('СКРЫТЬ' + show_room_table_btn_COUNT_HTML);
+
+        } else {
+            $(this).removeClass('active');
+            bc_table_room.fadeOut();
+            setTimeout(function(){
+                show_room_table_btn.html(show_room_table_btn_HTML);
+            }, show_room_table_btn_TRANSITION.split('s')[0] * 1000 );
+        }
+        
+
+    });
+
 });

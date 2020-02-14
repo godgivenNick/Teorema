@@ -64,3 +64,66 @@
         left: calc(100% + 3px);
     }
 }
+
+
+@media only screen and (max-width: 1366px){
+
+    [table-container="1090"] {
+        width: 968px;
+    }
+
+    [bc-room-col="1"] {
+        width: 260px;
+    }
+
+    [bc-room-col="2"] {
+        width: 90px;
+    }
+
+    [bc-room-col="2"] {
+        width: 90px;
+    }
+
+
+    .table__table-bc-room {
+
+        .table-head__full {
+            background-color: var(--teorema_omg_perdal);
+
+        }
+
+        .table-room::before {
+            width: 100%;
+            left: 0;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1023.98px){
+
+    [table-container="1090"] {
+        width: calc(100% - 16px);
+    }
+
+    .table__table-bc-room {
+
+        .table-head__full {
+            background-color: white;
+
+        }
+
+        .table-room::before {
+            width: 100%;
+            left: 0;
+        }
+
+        .table-room__compare-btn {
+            width: 45%;
+        }
+
+        .table-room__order-btn {
+            width: 45%;
+        }
+    }
+}
