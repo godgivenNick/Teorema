@@ -1,8 +1,8 @@
 .form-callback
     .form-callback__container
-        span.form-callback__sub-title ТОЦ «Эврика» Класса В+
+        span.form-callback__sub-title УК «ТЕОРЕМА» (текст редактируемый)
         span.form-callback__title Форма обратной связи
-        p.form-callback__desc Свяжитесь с нами, заполнив анкету ниже, или позвоните по телефону <a href="tel: +78123330444">+7 (812) 333-0-444</a>
+        //- p.form-callback__desc Свяжитесь с нами, заполнив анкету ниже, или позвоните по телефону <a href="tel: +78123330444">+7 (812) 333-0-444</a>
 
         form(action="")
             .input-field
@@ -19,12 +19,12 @@
                 span.input-field__error Это обязательное поле
             .input-field
                 textarea(resize="none")
-                span.input-field__label Напишите Ваши пожелания или предпочтения
+                span.input-field__label Комментарий
             button(type="submit").form-callback__btn Отправить заявку
-            p Нажимая на кнопку выше, вы соглашаетесь с <a href="javascript:void(0)">Условиями</a> и <a href="javascript:void(0)">Политикой конфиденциальности</a>
+            p Нажимая на кнопку, я принимаю <a href="javascript:void(0)">условия</a> пользовательского соглашения на обработку персональных данных
 
     <!-- после успешной отправки такой вид -->
     .form-callback__container.success(style="display: none;")
-        span.form-callback__sub-title ТОЦ «Эврика» Класса В+
+        span.form-callback__sub-title УК «ТЕОРЕМА» (текст редактируемый)
         .form-callback__success-title Заявка успешно отправлена    
         p.form-callback__desc Менеджер бизнес-центра свяжемся с вами через несколько минут для уточнения деталей

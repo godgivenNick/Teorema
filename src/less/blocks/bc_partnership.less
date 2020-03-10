@@ -1,6 +1,8 @@
 .bc-partnership {
 
-    padding-top: 80px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: var(--ghost_white);
 
     .n-container {
         display: flex;
@@ -30,6 +32,7 @@
         color: var(--text_dark_grey);
 
         text-transform: uppercase;
+        letter-spacing: 0.8px;
         margin-bottom: 40px;
     }
 
@@ -50,22 +53,21 @@
             }
         }
     }
+}
 
-    & > a {
-        font-size: 14px;   
-        line-height: 1.71;
-        font-weight: 700;
-        color: var(--text_dark_grey);
-        text-decoration: underline;
+.bc-partnership__link-btn {
+    font-size: 14px;   
+    line-height: 1.71;
+    font-weight: 700;
+    color: var(--text_dark_grey);
+    text-decoration: underline;
 
-        margin-bottom: 48px;
+    margin-bottom: 48px;
 
-        &:hover,
-        &:active {
-            text-decoration-color: transparent;
-        }
+    &:hover,
+    &:active {
+        text-decoration-color: transparent;
     }
-
 }
 
 
@@ -95,10 +97,14 @@
         }
     }
 
-    .bc-partnership__info-tel {
-        font-weight: 700;
+    &-tel {
+        font-size: 32px;
+        line-height: 1;
+        font-weight: 600;
         text-decoration: underline;
         text-decoration-color: transparent;
+
+        margin-bottom: 8px;
 
         &:hover,
         &:active {
@@ -110,6 +116,7 @@
 
 .bc-partnership__right {
     max-width: 512px;
+    display: flex;
 }
 
 
@@ -126,6 +133,12 @@
         flex-shrink: 0;
 
     }
+
+    .bc-partnership {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
 
 }
 
@@ -144,6 +157,7 @@
     .bc-partnership {
 
         padding-top: 64px;
+        padding-bottom: 64px;
 
         .n-container {
             flex-direction: column;
@@ -162,23 +176,21 @@
             padding-left: 12px;
 
             margin-bottom: 48px;
+        }
 
-            & > a {
-                margin-bottom: 32px;
-            }
-
+        &__link-btn {
+            margin-bottom: 32px;
         }
 
         h1,h2,h3,h4,h5,h6 {
             font-size: 24px;
-            margin-bottom: 32px;
 
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
 
         p {
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 16px;
         }
 
@@ -187,7 +199,12 @@
 
 
             * {
-                font-size: 20px;
+                font-size: 13px;
+            }
+
+            &-tel {
+                font-size: 16px;
+                line-height: 20px;
             }
         }
     }

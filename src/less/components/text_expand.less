@@ -1,0 +1,50 @@
+.text-expand {
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        transition: .2s ease-out;
+        overflow: hidden;
+    }
+
+    &__btn {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.15;
+        color: var(--text_dark_grey);
+        margin-top: 24px;
+        border-bottom: 1px dotted var(--text_dark_grey);
+
+        padding-bottom: 4px;
+
+        &:hover {
+            color: var(--teorema_green);
+            border-color: var(--teorema_green);
+        }
+    }
+
+    &[data-text-expand-for="mobile"] .text-expand__btn {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 767.98px){
+
+    .text-expand__btn {
+        font-size: 13px;
+        padding-bottom: 3px;
+    }
+
+    .text-expand {
+
+        &[data-text-expand-for="mobile"] .text-expand__btn {
+            display: flex;
+        }
+        
+    }
+}

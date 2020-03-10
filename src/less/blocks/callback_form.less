@@ -1,6 +1,6 @@
 .form-callback {
     width: 100%;
-    max-width: 512px;
+    max-width: 480px;
 
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
 
 
     background-color: var(--text_dark_grey);
-    border-radius: 3px;
+    border-radius: 8px;
 
     padding: 40px 32px 24px 32px;
 
@@ -38,8 +38,7 @@
         text-transform: uppercase;
         text-align: center;
 
-
-        margin-bottom: 8px;
+        margin-bottom: 32px;
     }
 
 
@@ -72,7 +71,7 @@
 
 
         .input-field {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         p {
@@ -160,6 +159,23 @@
         &__container {
             max-width: 448px;
         }
+
+
+        &__sub-title {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+
+        &__title {
+            font-size: 16px;
+            line-height: 1;
+        }
+    }
+
+    .form-callback__success-title {
+        font-size: 16px;
+        line-height: 1;
     }
 
 
@@ -173,8 +189,5 @@
     }
 
 
-    .form-callback__success-title {
-        font-size: 24px;
-        line-height: 1.25;
-    }
+
 }

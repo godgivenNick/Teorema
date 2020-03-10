@@ -1,5 +1,11 @@
 $( document ).ready(function() {
 
+// Один раз объявляем функцию, потом используем так, как в примере
+jQuery.fn.exists = function() {
+    return $(this).length;
+}
+
+
 function checkSizes(){
     $('header.header').each(function(){
         $('body').css({'padding-top':$(this).height()});
@@ -442,56 +448,67 @@ if(document.querySelector('.form-callback')){
 
 //  [ 12.02 ]
 
+if( $('.filter-result-tabs').exists() ){
 
-//  переключение табов + ползунок
-window.calc_f_results_toddler = function(){
-
-    // 1 шаг - инициализация
-    var f_results_tab_container = $('.filter-result-tabs'),
-        f_results_tab_toddler = f_results_tab_container.find('.filter-result-tabs__toddler');
-
-    var f_results_tab_active = $('.filter-result-tabs__tab.active'),
-        f_results_tab_active_width = f_results_tab_active.width(),
-        f_results_tab_active_left = f_results_tab_active.position().left,
-        f_results_tab_active_marginLeft = f_results_tab_active.css('margin-left');
+    //  переключение табов + ползунок
+    window.calc_f_results_toddler = function(){
     
-    f_results_tab_toddler.css({
-        'width' : f_results_tab_active_width,
-        'left' : f_results_tab_active_left + parseInt(f_results_tab_active_marginLeft, 10) + 'px',
-        'display' : 'block',
-    });
-};
-
-window.f_results_click_handler = function(){
-
-    // 2 шаг - обработка кликов
-    $('.filter-result-tabs__tab').click(function(){
-
-        if( !$(this).hasClass('active') ){
-
-            //  убрать актив
-            $('.filter-result-tabs__tab.active').removeClass('active');
-
-            // добавить актив
-            $(this).addClass('active');
-
-            // переместить ползунок
-            window.calc_f_results_toddler();
-        } else {
-            return;
-        }
+        // 1 шаг - инициализация
+        var f_results_tab_container = $('.filter-result-tabs'),
+            f_results_tab_toddler = f_results_tab_container.find('.filter-result-tabs__toddler');
+    
+        var f_results_tab_active = $('.filter-result-tabs__tab.active'),
+            f_results_tab_active_width = f_results_tab_active.width(),
+            f_results_tab_active_left = f_results_tab_active.position().left,
+            f_results_tab_active_marginLeft = f_results_tab_active.css('margin-left');
         
-
+        f_results_tab_toddler.css({
+            'width' : f_results_tab_active_width,
+            'left' : f_results_tab_active_left + parseInt(f_results_tab_active_marginLeft, 10) + 'px',
+            'display' : 'block',
+        });
+    };
+    
+    window.f_results_click_handler = function(){
+    
+        // 2 шаг - обработка кликов
+        $('.filter-result-tabs__tab').click(function(){
+    
+            if( !$(this).hasClass('active') ){
+    
+                //  убрать актив
+                var active_tab_id = $('.filter-result-tabs__tab.active').attr('data-f-result-tab');
+                $('.filter-result-tabs__tab.active').removeClass('active');
+                $('.table[data-f-result-tab="' + active_tab_id + '"]').fadeOut();
+    
+                
+                // добавить актив
+                $(this).addClass('active');
+                
+                // переместить ползунок
+                window.calc_f_results_toddler();
+                
+                // открыть таб
+                var tab_id = $(this).attr('data-f-result-tab');
+                $('.table[data-f-result-tab="' + tab_id + '"]').fadeIn();
+    
+            } else {
+                return;
+            }
+            
+    
+        });
+    };
+    
+    setTimeout(function(){
+        window.calc_f_results_toddler();
+        window.f_results_click_handler();
+    }, 10);
+    $(window).resize(function(){
+        window.calc_f_results_toddler();
     });
-};
+}
 
-setTimeout(function(){
-    window.calc_f_results_toddler();
-    window.f_results_click_handler();
-}, 10);
-$(window).resize(function(){
-    window.calc_f_results_toddler();
-});
 
 
 
@@ -510,7 +527,6 @@ window.init_table_bc_galery_each = function(){
             arrows: false,
             dots: true,
             dotsClass: 'table-bc__galery-dots',
-            // appendDots: '.bc-galery-slider',
             responsive: [
         
                 {
@@ -526,6 +542,101 @@ window.init_table_bc_galery_each = function(){
 
 };
 window.init_table_bc_galery_each();
+
+
+//  [ 02.03 ]
+
+if( $('.text-expand').exists() ){
+
+    $('.text-expand').each(function(){
+
+        var expand_block = $(this),
+            expand_content = expand_block.find('.text-expand__content'),
+            expand_content_height,
+            expand_btn = expand_block.find('.text-expand__btn'),
+            expand_btn_text = expand_btn.text(),
+            expand_max_height = expand_block.attr('data-max-height'),
+
+            expand_for = expand_block.attr('data-text-expand-for');
+
+        //  обнуляю на случай если ресайзят
+        expand_content_height = expand_content.height();
+
+
+        //  для всех разрешений
+        if( expand_for == 'all' ){
+
+            //  поведение и переопределение величин при ресайзе
+            $(window).resize(function(){
+
+                expand_content.height( 'auto' );
+                expand_content_height = expand_content.height();
+        
+                if( $( window ).width() >= 768 ){
+                    
+                } else {
+                    expand_max_height = '96px';
+                }
+                expand_content.height( expand_max_height );
+                
+            });
+
+
+            //  стандартное поведение при загрузке страницы
+            expand_content.height( expand_max_height );
+
+            //  если стр. загрузилась < 768
+            if( $( window ).width() < 768 ){
+                expand_max_height = '96px'; 
+            }
+        } 
+
+
+        // только для мобилок
+        else if( expand_for == 'mobile' && $( window ).width() < 768 ){
+
+            //  стандартное поведение при загрузке страницы
+            expand_content.height( expand_max_height );
+
+            //  поведение и переопределение величин при ресайзе
+            $(window).resize(function(){
+
+                expand_content.height( 'auto' );
+                expand_content_height = expand_content.height();
+        
+                if( $( window ).width() >= 768 ){
+                    return;
+                } else {
+                    expand_content.height( expand_max_height );
+                }
+                
+            });
+
+        }
+
+
+        //  обработка клика
+        expand_btn.on('click', function(){
+
+            if( !expand_btn.hasClass('active') ){
+                expand_btn.addClass('active');
+                expand_btn.text('Свернуть');
+                expand_content.height( expand_content_height );
+            } else {
+                expand_btn.removeClass('active');
+                expand_btn.text( expand_btn_text );
+                expand_content.height( expand_max_height );
+            }
+
+        });
+            
+    });
+
+}
+
+
+
+
 
 
 //  END

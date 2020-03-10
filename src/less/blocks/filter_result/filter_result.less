@@ -3,18 +3,31 @@
     
     display: flex;
     flex-direction: column;
+    padding-top: 80px;
+
 }
 
+.table-double {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-result__bc-table {
+    margin-bottom: 80px;
+}
 
 .filter-result-tabs {
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 
     width: 100%;
-    max-width: 1344px;
+    max-width: 1312px;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
     border-bottom: 1px solid #CFD3D7;
 
@@ -22,18 +35,30 @@
 }
 
 
+.filter-result-tabs__title {
+    width: 100%;
+
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #7F8B93;
+
+    margin-bottom: 8px;
+}
+
+
 .filter-result-tabs__tab {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 500;
-    line-height: 40px;
+    line-height: 24px;
     color: var(--text_dark_grey);
 
     text-transform: uppercase;
 
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 
     &:not(:first-of-type){
-        margin-left: 70px;
+        margin-left: 32px;
     }
 
     &.active {
@@ -53,4 +78,182 @@
     position: absolute;
     bottom: -2px;
     left: 0;
+}
+
+
+//  выбранные парамтеры
+.filter-result-legend {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    max-width: 1312px;
+    width: 100%;
+
+    margin-bottom: 80px;
+
+
+    &__title {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--text_dark_grey);
+
+        margin-bottom: 24px;
+    }
+
+
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: var(--text_medium_grey);
+        background-color: var(--teorema_omg_perdal);
+        border: 1px solid transparent;
+        border-radius: 3px;
+        transition: 0.2s ease-out;
+
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+
+
+@media only screen and (max-width: 1366px){
+
+    .filter-result__bc-table {
+        margin-bottom: 64px;
+    }
+    
+    .filter-result-legend {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .filter-result-tabs {
+        max-width: 1000px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 1023.98px){
+
+    .filter-result {
+        padding-top: 64px;
+    }
+    .filter-result-legend {
+        margin-bottom: 64px;
+    }
+
+    .filter-result-tabs {
+        margin-bottom: 24px;
+        margin-bottom: 0;
+
+        max-width: calc(100% - 16px);
+    }
+
+    .filter-result-tabs__tab {
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .filter-result-tabs__tab:not(:first-of-type) {
+        margin-left: 24px;
+    }
+
+
+}
+
+@media only screen and (max-width: 767.98px){
+
+    .filter-result {
+        padding-top: 48px;
+    }
+    .filter-result-legend {
+        margin-bottom: 48px;
+    }
+
+    .filter-result-tabs {
+        margin-bottom: 16px;
+    }
+
+    .filter-result-tabs__tab {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .filter-result-tabs__title {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .filter-result-tabs__toddler {
+        height: 2px;
+        bottom: -1px;
+    }
+}
+    
+
+
+@media only screen and (max-width: 640px){
+
+    .filter-result {
+        padding-top: 24px;
+    }
+    .filter-result-legend {
+        margin-bottom: 32px;
+    }
+
+
+    .filter-result-legend__title {
+        font-size: 12px;
+        line-height: 16px;
+
+        margin-bottom: 8px;
+    }
+
+    .filter-result-legend__item {
+        height: auto;
+        padding: 2px 4px;
+
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+
+
+    .filter-result-tabs {
+        margin-bottom: 16px;
+        padding: 0 8px;
+
+    }
+
+    .filter-result-tabs__tab {
+        font-size: 14px;
+        line-height: 18px;
+        padding-bottom: 8px;
+    }
+    .filter-result-tabs__tab:not(:first-of-type) {
+        margin-left: 32px;
+    }
+
+
+    .filter-result__bc-table {
+        margin-bottom: 32px;
+    }
 }

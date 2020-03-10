@@ -1,0 +1,19 @@
+- var img_src = "./img/jpg/content_x2/";
+
+mixin content_x2_item_text_only(title, img)
+    .content-x2-item
+        .content-x2-item__left.text-expand(data-max-height="80px" data-text-expand-for="mobile")
+            h3= title
+            .text-expand__content
+                block
+            button.text-expand__btn Посмотреть подробнее
+        .content-x2-item__right
+            .content-x2-item__img
+                picture
+                    // <source srcset=".webp" type="image/webp"> 
+                    img(
+                        src= img_src + img + ".jpg"
+                        srcset= img_src + img + ".jpg"
+                        alt=""
+                    )
+            .content-x2-item__img-desc Короткая подпись к фотографии

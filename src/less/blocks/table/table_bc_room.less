@@ -127,3 +127,69 @@
         }
     }
 }
+
+@media only screen and (max-width: 767.98px){
+
+    [table-container="1090"] {
+        width: 100%;
+    }
+
+    [bc-room-col] {
+        width: auto;
+        // padding: 0;
+    }
+
+    .table__table-bc-room .table-room__order-btn {
+        width: calc(100% + 2px);
+    }
+
+    .table-room__chars {
+        align-self: flex-start;
+        padding: 0 8px;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 460px){
+
+    .table__table-bc-room {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+
+            height: 100%;
+            width: 100%;
+            background-color: var(--teorema_omg_perdal);
+
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            right: 100%;
+        }
+        &::after {
+            left: 100%;
+        }
+    }
+
+    .filter-result__bc-table .table-body__list {
+        border-bottom: none;
+    }
+
+    .table__table-bc-room .table-body__list {
+        border-bottom: 1px solid #CFD3D7;
+    }
+
+
+
+
+}

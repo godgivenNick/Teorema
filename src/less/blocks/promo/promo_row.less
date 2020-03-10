@@ -1,0 +1,149 @@
+.promo-row {
+    
+    padding-top: 56px;
+    padding-bottom: 88px;
+
+    &__n-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+
+    h1,h2 {
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+
+    &__left {
+        width: 512px;
+
+        padding-top: 16px;
+        margin-right: 32px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-shrink: 0;
+    }
+
+    &__right {
+        padding-top: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+
+    &__text-expand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+    
+            color: var(--text_dark_grey);
+            text-align: left;
+
+            a {
+                color: var(--teorema_green);
+                text-decoration: underline;
+                &:hover,
+                &:active {
+                    text-decoration-color: transparent;
+                }
+            }
+        }
+    
+    }
+
+}
+
+
+@media only screen and (max-width: 1366px){
+
+    .promo-row {
+    
+    
+        &__left {
+            padding-left: 16px;
+        }
+    
+    }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px){
+    .promo-row {
+    
+        
+        &__left {
+            width: 100%;
+            max-width: 400px;
+            margin-right: 16px;
+        }
+    
+    }
+
+}
+
+
+@media only screen and (max-width: 767.98px){
+    .promo-row {
+    
+
+        padding-top: 40px;
+        padding-bottom: 56px;
+
+
+        h1,h2 {
+            font-size: 24px;
+            margin-bottom: 32px;
+        }
+
+
+        &__n-container {
+            flex-direction: column;
+        }
+
+        
+        &__left {
+            margin-right: 0;
+            padding-left: 12px;
+        }
+
+
+        &__right {
+            padding-top: 0;
+            padding: 0 12px;
+        }
+
+        &__text-expand {
+    
+            p {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        
+        }
+    
+    }
+
+}
