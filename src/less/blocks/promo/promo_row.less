@@ -1,12 +1,19 @@
-.promo-row {
+.promo {
     
     padding-top: 56px;
     padding-bottom: 88px;
 
-    &__n-container {
+    &-row__n-container {
         display: flex;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: flex-start; 
+    }
+
+    &-col__n-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start; 
     }
 
 
@@ -75,7 +82,7 @@
 
 @media only screen and (max-width: 1366px){
 
-    .promo-row {
+    .promo {
     
     
         &__left {
@@ -91,7 +98,7 @@
 
 
 @media only screen and (max-width: 1200px){
-    .promo-row {
+    .promo {
     
         
         &__left {
@@ -106,7 +113,7 @@
 
 
 @media only screen and (max-width: 767.98px){
-    .promo-row {
+    .promo {
     
 
         padding-top: 40px;
@@ -119,7 +126,7 @@
         }
 
 
-        &__n-container {
+        &-row__n-container {
             flex-direction: column;
         }
 

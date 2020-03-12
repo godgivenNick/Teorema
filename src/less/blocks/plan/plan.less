@@ -6,55 +6,146 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    position: relative;
 
-
-    &__back-btn {
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 15px;
-        color: var(--text_dark_grey);
-        padding-left: 24px;
-        padding-bottom: 3px;
-        border-bottom: 1px dotted var(--text_dark_grey);
-        position: relative;
-        align-self: flex-start;
-
-        &::before {
-            content: '';
-            width: 16px;
-            height: 9px;
-            position: absolute;
-            left: 0;
-            top: 3px;
-            background: url('../img/svg/arrow_back.svg') no-repeat center center;
-            background-size: cover;
-            transition: .15s ease-out;
+    &__container {
+        min-height: 200px;
+        &:not(.plan--bordered){
+            border-bottom: 1px solid #707070;
         }
+    }
 
-        &:hover,
-        &:active {
-            border-bottom-color: transparent;
-            &::before {
-                transform: translateX(-6px);
-            }
+    &--bordered {
+        border: 1px solid #DEE1E3;
+        width: 100%;
+        min-height: 240px;
+    }
+
+    &-floor {
+
+        .plan__legend {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .plan__floors-container {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            margin-bottom: 16px;
+        }
+        .plan__clients {
+            padding-left: 16px;
+            padding-right: 16px;
+
+            margin-bottom: 24px;
         }
     }
 
 
-    &__head {
+
+
+    //  подсказка есть/нет свободные
+    &__helper {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
 
+        padding-top: 16px;
+    
+        span {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 400;
+            color: var(--text_dark_grey);
+    
+            position: relative;
+            padding-left: 24px;
+            padding-right: 24px;
+            margin-bottom: 8px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 1px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: #B2E9B1;
+            }
+            &:nth-child(2){
+                &::before {
+                    background-color: #F09B8F;
+                }
+            }
+        }
+    }
+    //  END  подсказка есть/нет свободные
+
+
+    //  Выбор этажей и допы для этой дряни
+
+    &__floors-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-top: 16px;
 
         p {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.5;
-            color: var(--text_dark_grey);
+            max-width: 180px;
 
-            margin-bottom: 16px;
-            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            color: var(--border_light_grey);
+    
+            text-align: right;
+            margin-right: 16px;
+            margin-bottom: 8px;
+        }
+    }
+
+
+    &__floors-helper {
+        max-width: 235px;
+        padding: 8px 8px 12px 12px;
+        border: 1px solid #CFD3D7;
+        border-radius: 4px;
+        background-color: var(--ghost_white);
+
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        font-style: italic;
+        color: var(--text_dark_grey);
+        text-align: left;
+
+        margin-left: 24px;
+
+        position: relative;
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: var(--ghost_white);
+            border: 1px solid #CFD3D7;
+            border-left: 0;
+            border-bottom: 0;
+
+            z-index: 1;
+        }
+
+        &::before {
+            right: calc(100% - 5px);
+            top: calc(50% - 6px);
+            transform: rotate(225deg);
+        }
+        &::after {
+            left: 25px;
+            bottom: calc(100% - 5px);
+            transform: rotate(315deg);
         }
     }
 
@@ -63,10 +154,7 @@
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
-
-        margin-bottom: 40px;
     }
-
 
     &__floor-btn {
         display: flex;
@@ -101,52 +189,48 @@
             }
         }
     }
+    //  END  Выбор этажей и допы для этой дряни
 
 
-    &__plan {
-        min-height: 240px;
+    //  кнопка "Назад к фасаду"
+    &__back-btn {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        color: var(--text_dark_grey);
+        padding-left: 24px;
+        padding-bottom: 3px;
+        border-bottom: 1px dotted var(--text_dark_grey);
+        position: relative;
+        align-self: flex-start;
+        text-transform: uppercase;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #DEE1E3;
-        border-radius: 4px;
+        position: absolute;
+        left: 0;
+        top: -40px;
 
+        &::before {
+            content: '';
+            width: 16px;
+            height: 9px;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            background: url('../img/svg/arrow_back.svg') no-repeat center center;
+            background-size: cover;
+            transition: .15s ease-out;
+        }
 
-        &-footer {
-            display: flex;
-            margin-top: 24px;
-            justify-content: center;
-            align-items: center;
-
-            span {
-                font-size: 14px;
-                line-height: 18px;
-                font-weight: 400;
-                color: var(--text_dark_grey);
-
-                position: relative;
-                padding-left: 24px;
-                padding-right: 24px;
-                margin-bottom: 8px;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 1px;
-                    width: 16px;
-                    height: 16px;
-                    border-radius: 50%;
-                    background-color: #B2E9B1;
-                }
-                &:nth-child(2){
-                    &::before {
-                        background-color: #F09B8F;
-                    }
-                }
+        &:hover,
+        &:active {
+            border-bottom-color: transparent;
+            &::before {
+                transform: translateX(-6px);
             }
         }
     }
+    // END кнопка "Назад к фасаду"
+
 }
 
 
@@ -175,7 +259,8 @@
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 10px;
+    padding-top: 8px;
+    // margin-bottom: 10px;
 }
 
 .plan__legend-item {
@@ -208,19 +293,19 @@
         flex-shrink: 0;
     }
 
-    &[legend="free"] span:first-child { background-color: #B2E9B1; }
-    &[legend="empty"] span:first-child { background-color: #F09B8F; }
-    &[legend="lift-1"] span:first-child { background-color: #FFE0BE; position: relative;}
-    &[legend="lift-2"] span:first-child { background-color: #D2E4F3; position: relative;}
-    &[legend="talk"] span:first-child { background-color: #C4D3F5; }
-    &[legend="game"] span:first-child { background-color: #F6CEF7; }
-    &[legend="rent"] span:first-child { background-color: #8ED6DE; }
-    &[legend="rest"] span:first-child { background-color: #F0E695; }
-    &[legend="wc"] span:first-child { background-color: #B0B0AC; }
+    &[data-legend="free"] span:first-child { background-color: #B2E9B1; }
+    &[data-legend="empty"] span:first-child { background-color: #F09B8F; }
+    &[data-legend="lift-1"] span:first-child { background-color: #FFE0BE; position: relative;}
+    &[data-legend="lift-2"] span:first-child { background-color: #D2E4F3; position: relative;}
+    &[data-legend="talk"] span:first-child { background-color: #C4D3F5; }
+    &[data-legend="game"] span:first-child { background-color: #F6CEF7; }
+    &[data-legend="rent"] span:first-child { background-color: #8ED6DE; }
+    &[data-legend="rest"] span:first-child { background-color: #F0E695; }
+    &[data-legend="wc"] span:first-child { background-color: #B0B0AC; }
 
 
-    &[legend="lift-1"] span:first-child::after,
-    &[legend="lift-2"] span:first-child::after {
+    &[data-legend="lift-1"] span:first-child::after,
+    &[data-legend="lift-2"] span:first-child::after {
         content: '';
         width: 11px;
         height: 11px;
@@ -234,7 +319,7 @@
 }
 
 
-
+//  Клиенты
 .plan__clients {
     display: flex;
     flex-wrap: wrap;
@@ -313,8 +398,10 @@
     }
 
 }
+//  END Клиенты
 
 
+//  CTA
 .plan__cta {
     width: 100%;
     display: flex;
@@ -365,8 +452,10 @@
         }
     }
 }
+//  end CTA
 
 
+//  tooltip
 .plan-tooltip {
     align-self: flex-start;
     width: 200px;
@@ -419,14 +508,18 @@
         transform: rotate(45deg);
     }
 }
+// end tooltip
 
 
 
 @media only screen and (max-width: 1366px){
 
     .plan__cta {
-
         padding: 32px 16px;
+    }
+
+    .plan__back-btn {
+        top: -30px;
     }
 
 
@@ -472,7 +565,10 @@
 @media only screen and (max-width: 767.98px){
 
     .plan__floor-btn {
-        padding: 0 20px;
+        padding: 0 16px;
+        font-size: 13px;
+        line-height: 16px;
+        height: 32px;
     }
 
 
@@ -521,12 +617,28 @@
     }
 
 
-    .plan__legend-item[legend="lift-1"] span:first-child::after, 
-    .plan__legend-item[legend="lift-2"] span:first-child::after {
+    .plan__legend-item[data-legend="lift-1"] span:first-child::after, 
+    .plan__legend-item[data-legend="lift-2"] span:first-child::after {
         width: 9px;
         height: 9px;
         left: 1px;
         top: 1px;
+    }
+
+
+    .plan__floors-container {
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            text-align: left;
+            max-width: none;
+            margin-right: 0;
+        }
+    }
+
+    .plan__floors-helper {
+        display: none;
     }
 }
 
