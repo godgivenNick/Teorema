@@ -2,6 +2,46 @@
     background-color: var(--teorema_dark_grey);
 }
 
+
+#up_btn {
+    transition: .4s ease-out;
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+
+    transform: translateX(800px);
+    &.show {
+        transform: translateX(0px);
+    }
+}
+
+.footer__up-btn {
+    transition: .25s ease-out;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        transition: .25s ease-out;
+        stroke: #BFC5C9;
+        width: 17px;
+        height: 33px;
+        transform: rotate(180deg);
+    }
+
+    &:hover,
+    &:active {
+        background-color:  #ECEEEF;
+        svg {
+            stroke: var(--text_dark_grey);
+        }
+    }
+}
+
 .header + .footer {
     margin-top: 300px;
 }
@@ -89,7 +129,7 @@
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
 
     &__left {
@@ -102,9 +142,9 @@
         align-items: flex-start;
 
         &, p, a {
-            font-size: 14px;
+            font-size: 16px;
+            line-height: 24px;
             font-weight: 400;
-            line-height: 2;
             color: var(--teorema_omg_perdal);
         }
     }
@@ -120,7 +160,7 @@
         &, p, a {
             font-size: 14px;
             font-weight: 400;
-            line-height: 24px;
+            line-height: 20px;
             color: #7F8B93;
         }
     }
@@ -193,6 +233,36 @@
     }
 }
 
+@media only screen and (max-width: 1366px){
+
+    #up_btn {
+        transform: none;
+        position: static;
+    }
+
+    .footer__up-btn {
+        width: 100%;
+        height: 48px;
+        background-color: var(--teorema_dark_grey);
+        border-radius: 0;
+
+        border-bottom: 1px solid var(--border_light_grey);
+
+        svg {
+            stroke: white;
+            transform: rotate(180deg) scale(.75);
+        }
+
+        &:hover,
+        &:active {
+            background-color: var(--text_medium_grey);
+            svg {
+                stroke: white;
+            }
+        }
+    }
+
+}
 
 @media only screen and (max-width: 1280px){
 
@@ -340,10 +410,23 @@
     .footer-content__left {
         
         p {
-            margin-bottom: 80px;
-            font-size: 16px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 16px;
             a {
+                line-height: 16px;
                 font-size: 16px;
+            }
+        }
+    }
+    .footer-content__right {
+        
+        p {
+            font-size: 12px;
+            line-height: 14px;
+            a {
+                line-height: 12px;
+                font-size: 14px;
             }
         }
     }

@@ -635,6 +635,31 @@ if( $('.text-expand').exists() ){
 }
 
 
+//  кнопка "Наверх"
+
+if( $('#up_btn').exists() ){
+
+    var up_btn = $('#up_btn');
+    
+    // высота окна браузера
+    var user_height = $(window).height();
+    
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > user_height) {
+          up_btn.addClass('show');
+        } else {
+          up_btn.removeClass('show');
+        }
+    });
+    
+    up_btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '2000');
+    });
+
+}
+
+
 
 
 

@@ -24,12 +24,15 @@
 
         .table-head__full
             .table-head(table-container="1312")
-                .table-head__label(table-col="1") Свободно 666 помещений 
-                a(href="javascript:void(0)" table-col="2").table-head__label.table-head__sort-square.active 
+                .table-head__label(table-col="1") Свободно 666 помещений
+                a(href="javascript:void(0)").table-head__label.table-head__sort.table-head__label-class
+                    span Класс
+                a(href="javascript:void(0)" table-col="2").table-head__label.table-head__sort.active 
                     span Площадь
-                a(href="javascript:void(0)" table-col="3").table-head__label.table-head__sort-price 
+                a(href="javascript:void(0)" table-col="3").table-head__label.table-head__sort 
                     span Стоимость
-                .table-head__label(table-col="4") Ставка
+                a(href="javascript:void(0)" table-col="4").table-head__label.table-head__sort 
+                    span Ставка
                 .table-head__label(table-col="5").table-head__compare
                     div Сравнение <span>3</span>
                 .table-head__label(table-col="6").table-head__order
@@ -42,5 +45,6 @@
                 include table_room_item.pug
 
             .table-body__ctrls
+                button.table-body__ctrl-btn Показать все (666)
                 button.table-body__ctrl-btn Показать еще
                 button.table-body__ctrl-btn Скрыть

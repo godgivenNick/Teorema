@@ -1,29 +1,36 @@
 mixin social_link(icon_id)
-    a(href="javascript:void(0)")
+    a(href="javascript:void(0)" target="_blank")
         svg
             use(xlink:href= icon_id)
 
 footer.footer
+
+    a(href="javascript:void(0)")#up_btn
+        .footer__up-btn
+            svg
+                use(xlink:href="#arrow_down")
+
     .n-container
         .footer-top
             a.footer-top__logo(href="/" title="Главная")
                 img(src="./img/svg/logo_green.svg", alt="Главная")
             .footer-top__row
-                a(href="") Бизнес-центры
-                a(href="") Аренда недвижимости
-                a(href="") Продажа недвижимости
-                a(href="") О компании
-                a(href="") Контакты
+                a(href="javascript:void(0)") Бизнес-центры
+                a(href="javascript:void(0)") Аренда недвижимости
+                a(href="javascript:void(0)") Продажа недвижимости
+                a(href="javascript:void(0)") О компании
+                a(href="javascript:void(0)") Новости
+                a(href="javascript:void(0)") Контакты
             
         .footer-menu
-            a(href="") Коммерческая недвижимость
-            a(href="") Аренда офисов
-            a(href="") Статьи
-            a(href="") Советы по аренде
-            a(href="") Сервисы на сайте
-            a(href="") Вопрос-ответ
-            a(href="") Отзывы
-            a(href="") Новости
+            a(href="javascript:void(0)") Коммерческая недвижимость
+            a(href="javascript:void(0)") Аренда офисов
+            a(href="javascript:void(0)") Статьи
+            a(href="javascript:void(0)") Советы по аренде
+            a(href="javascript:void(0)") Сервисы на сайте
+            a(href="javascript:void(0)") Вопрос-ответ
+            a(href="javascript:void(0)") Отзывы
+            a(href="javascript:void(0)") Карта сайта
 
         .footer-content
             .footer-content__left
@@ -33,9 +40,9 @@ footer.footer
             
 
         .footer-bot
-            .footer-bot__col
-                a(href="javascript:void(0)") Политика конфиденциальности
-                a(href="javascript:void(0)") Условия пользования
+            //- .footer-bot__col
+            //-     a(href="javascript:void(0)") Политика конфиденциальности
+            //-     a(href="javascript:void(0)") Условия пользования
             .footer-bot__col
                 .footer-social
                     +social_link('#telegram-icon')
@@ -47,5 +54,5 @@ footer.footer
                     +social_link('#whatsapp-icon')
                     +social_link('#viber-icon')
             .footer-bot__col
-                a(href="javascript:void(0)") Разработка сайта Digital Dinamics LSS,
-                a(href="javascript:void(0)") Дизайн сайта Midyanets
+                a(href="javascript:void(0)" target="_blank") Разработка сайта Digital Dinamics LSS,
+                a(href="http://instagram.com/midyanets" target="_blank") Дизайн сайта Midyanets
