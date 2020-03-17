@@ -1,0 +1,140 @@
+.all-bc {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    padding-top: 56px;
+
+
+    &__n-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+}
+
+
+.all-bc-item {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin-bottom: 120px;
+
+
+    &__head {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        border-bottom: 1px solid #CFD3D7;
+    }
+
+
+    &__bc-link {
+        //
+        max-width: 512px;
+        //
+
+        margin-bottom: 16px;
+
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase; 
+        &:hover,
+        &:active {
+            color: var(--teorema_green);
+        }
+    }
+
+
+    &__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        padding-top: 24px;
+        padding-bottom: 32px;
+
+        position: relative;
+    }
+
+
+    &__body-head {
+        left: 0;
+        
+        position: absolute;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    &__show-content {
+        display: none;
+    }
+
+
+    &__body-content {
+        width: 100%;
+    }
+
+
+    &__body-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        padding-left: 64px;
+    }
+
+
+    ul {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            flex-shrink: 0;
+            text-align: left;
+            margin-right: 32px;
+
+            span:first-child {
+                font-size: 10px;
+                line-height: 16px;
+                font-weight: 300;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                color: var(--border_light_grey);
+            }
+            span:last-child {
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 500;
+                color: var(--text_dark_grey);
+            }
+        }
+    }
+
+
+}
