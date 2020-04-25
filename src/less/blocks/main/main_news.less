@@ -1,0 +1,225 @@
+.main-news {
+    padding-top: 80px;
+
+
+    &__n-container.n-container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+
+    h2,h3 {
+        font-size: 30px;
+        line-height: 1.25;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase;
+        margin-bottom: 56px;
+    }
+
+
+
+}
+
+
+.main-news__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-right: 24px;
+
+    overflow-y: scroll;
+}
+
+
+.main-news__filter-result-tabs {
+    margin-bottom: 56px;
+}
+
+
+//
+.main-news-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+
+
+    &__heading {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        cursor: pointer;
+        padding-right: 56px;
+
+        &::before,
+        &::after {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: #DEE1E3;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: 0.277s ease-out;
+        }
+
+        &::after {
+            width: 1px;
+            background-color: var(--text_dark_grey);
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+
+            .main-news-item__arrow {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    &__date {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 300;
+        color: var(--text_dark_grey);
+    }
+    &__name {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: var(--text_dark_grey);
+
+        margin-bottom: 8px;
+    }
+
+    &__arrow {
+        position: absolute;
+        right: 16px;
+        top: 13px;
+        width: 17px;
+        height: 33px;
+        transition: 0.25s ease-out;
+        opacity: 0;
+        background: url(../img/svg/arrow_down.svg) no-repeat center center;
+
+        transform: scale(.85);
+    }
+
+
+    &__content {
+        padding-top: 24px;
+        padding-bottom: 56px;
+        display: flex;
+        flex-direction: column;
+        display: none;
+
+        border-bottom: 1px solid var(--text_dark_grey);
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 300;
+            color: var(--text_dark_grey);
+        }
+    }
+
+
+    &.show {
+
+        .main-news-item__heading {
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        .main-news-item__arrow {
+            opacity: 1;
+            transform: scale(.85) rotate(180deg);
+        }
+    }
+}
+//
+
+
+@media only screen and (max-width: 1366px){
+
+    .filter-result-tabs.main-news__filter-result-tabs {
+        max-width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 767.98px){
+
+    .main-news__filter-result-tabs .filter-result-tabs__tab:not(:first-of-type) {
+        margin-left: 4px;
+    }
+
+    .main-news {
+        padding-top: 80px;
+
+        h2,h3 {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 32px;
+        }
+
+    }
+
+    .main-news__list {
+        padding-right: 0;
+    }
+
+    .main-news-item.show {
+
+        .main-news-item__arrow {
+            transform: scale(0.7) rotate(180deg);
+        }
+    }
+
+    .main-news-item__heading {
+        padding-right: 32px;
+    }
+
+    .main-news-item__arrow {
+        right: 8px;
+        opacity: .5;
+        transform: scale(0.7);
+        top: auto;
+        bottom: 8px;
+    }
+
+    .main-news-item__date {
+        font-size: 13px;
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+
+    .main-news-item__name {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .main-news-item__content {
+        padding-top: 8px;
+        padding-bottom: 32px;
+        p {
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+
+}

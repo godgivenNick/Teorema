@@ -436,69 +436,75 @@ if( $('.filter-result-tabs').exists() ){
 
     //  переключение табов + ползунок
     window.calc_f_results_toddler = function(){
-    
+
         // 1 шаг - инициализация
-        var f_results_tab_container = $('.filter-result-tabs'),
-            f_results_tab_toddler = f_results_tab_container.find('.filter-result-tabs__toddler');
-    
-        var f_results_tab_active = $('.filter-result-tabs__tab.active'),
-            f_results_tab_active_width = f_results_tab_active.width(),
-            f_results_tab_active_left = f_results_tab_active.position().left,
-            f_results_tab_active_marginLeft = f_results_tab_active.css('margin-left');
-        
-        f_results_tab_toddler.css({
-            'width' : f_results_tab_active_width,
-            'left' : f_results_tab_active_left + parseInt(f_results_tab_active_marginLeft, 10) + 'px',
-            'display' : 'block',
+        $('.filter-result-tabs').each(function(){
+            var f_results_tab_container = $(this),
+                f_results_tab_toddler = f_results_tab_container.find('.filter-result-tabs__toddler');
+
+            var f_results_tab_active = f_results_tab_container.find('.filter-result-tabs__tab.active'),
+                f_results_tab_active_width = f_results_tab_active.width(),
+                f_results_tab_active_left = f_results_tab_active.position().left,
+                f_results_tab_active_marginLeft = f_results_tab_active.css('margin-left');
+
+            f_results_tab_toddler.css({
+                'width' : f_results_tab_active_width,
+                'left' : f_results_tab_active_left + parseInt(f_results_tab_active_marginLeft, 10) + 'px',
+                'display' : 'block',
+            });
         });
+    
     };
     
     window.f_results_click_handler = function(){
     
         // 2 шаг - обработка кликов
-        $('.filter-result-tabs__tab').click(function(){
-    
-            if( !$(this).hasClass('active') ){
-    
-                //  убрать актив
-                var active_tab_id = $('.filter-result-tabs__tab.active').attr('data-f-result-tab') ? $('.filter-result-tabs__tab.active').attr('data-f-result-tab') : $('.filter-result-tabs__tab.active').attr('data-tab-id');
-                $('.filter-result-tabs__tab.active').removeClass('active');
-                $('.table[data-f-result-tab="' + active_tab_id + '"]').fadeOut();
+        $('.filter-result-tabs__tab').each(function(){
+            $(this).on('click', function(){
 
-                //  !!! если табы не для таблицы
-                if($(this).attr('data-f-result-tab') == undefined){
-                    $('[data-tab-container-id="' + active_tab_id + '"]').fadeOut();
-                }
-                
-    
-                
-                // добавить актив
-                $(this).addClass('active');
-                
-                // переместить ползунок
-                window.calc_f_results_toddler();
-                
-                // открыть таб
-                var tab_id = $(this).attr('data-f-result-tab') ? $(this).attr('data-f-result-tab') : $(this).attr('data-tab-id');
-                $('.table[data-f-result-tab="' + tab_id + '"]').fadeIn();
+                if( !$(this).hasClass('active') ){
 
-                //  !!! если табы не для таблицы
-                if($(this).attr('data-f-result-tab') == undefined){
-                    $('[data-tab-container-id="' + tab_id + '"]').fadeIn();
+                    var tab_cont = $(this).closest('.filter-result-tabs'),
+                        active_tab = tab_cont.find('.filter-result-tabs__tab.active');
+
+                    //  убрать актив
+                    var active_tab_id = active_tab.attr('data-f-result-tab') ? active_tab.attr('data-f-result-tab') : active_tab.attr('data-tab-id');
+                    active_tab.removeClass('active');
+                    $('.table[data-f-result-tab="' + active_tab_id + '"]').fadeOut();
+
+
+                    //  !!! если табы не для таблицы
+                    if($(this).attr('data-f-result-tab') == undefined){
+                        $('[data-tab-container-id="' + active_tab_id + '"]').fadeOut();
+                    }
+
+
+                    // добавить актив
+                    $(this).addClass('active');
+
+                    // переместить ползунок
+                    window.calc_f_results_toddler();
+
+                    // открыть таб
+                    var tab_id = $(this).attr('data-f-result-tab') ? $(this).attr('data-f-result-tab') : $(this).attr('data-tab-id');
+                    $('.table[data-f-result-tab="' + tab_id + '"]').fadeIn();
+                    //  !!! если табы не для таблицы
+                    if($(this).attr('data-f-result-tab') == undefined){
+                        $('[data-tab-container-id="' + tab_id + '"]').fadeIn();
+                    }
+
+                } else {
+                    return;
                 }
-    
-            } else {
-                return;
-            }
-            
-    
+            });
         });
+
     };
     
     setTimeout(function(){
         window.calc_f_results_toddler();
         window.f_results_click_handler();
-    }, 10);
+    }, 50);
     $(window).resize(function(){
         window.calc_f_results_toddler();
     });
