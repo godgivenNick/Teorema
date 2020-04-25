@@ -1,0 +1,38 @@
+mixin exclusive_offer_item(img_name)
+    a(href="javascript:void(0)").exclusive-offer-item
+        .exclusive-offer-item__img
+            picture
+                source( srcset= "./img/exclusive_offer/" + img_name + ".jpg" type="image/webp")
+                img(
+                    src= "./img/exclusive_offer/" + img_name + ".jpg" 
+                    srcset= "./img/exclusive_offer/" + img_name + ".jpg" )
+
+        .exclusive-offer-item__body
+            .exclusive-offer-item__name Офисный блок № 666
+            .exclusive-offer-item__price 762 м² за 676 656 ₽/месяц
+            .exclusive-offer-item__info БЦ «H2О» класса В+
+            .exclusive-offer-item__info ул. Химиков, 28, лит. АС
+
+section.exclusive-offer
+    .n-container.exclusive-offer__n-container
+        h2 ЭКСКЛЮЗИВНЫЕ ПРЕДЛОЖЕНИЯ аренды
+
+        .exclusive-offer-list
+            button.exclusive-offer-list__prev
+                img(src="./img/svg/arrow_left.svg")
+            button.exclusive-offer-list__next
+                img(src="./img/svg/arrow_right.svg")
+
+            .exclusive-offer-list__container
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_1")
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_2")
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_1")
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_2")
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_1")
+                .exclusive-offer__slide
+                    +exclusive_offer_item("exclusive_offer_example_2")

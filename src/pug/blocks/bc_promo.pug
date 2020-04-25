@@ -1,14 +1,11 @@
-mixin social_link(icon_id)
-    a(href="javascript:void(0)")
-        svg
-            use(xlink:href= icon_id)
-
 section.n-block.bc-promo
     .n-container.bc-promo__first
         .bc-promo__left
             .bc-promo__logo
                 img(src="./img/svg/logo_evrika.svg")
             h3 Торгово-офисный центр класса В+
+            a(href="javascript:void(0)").bc-promo__bc-link 
+                span Страница торгового центра
             a.bc-promo__map(href="javascript:void(0)")
                 .bc-promo__map-icons
                     img(src="./img/svg/gps_default.svg")
@@ -17,29 +14,26 @@ section.n-block.bc-promo
                     p 192019, Санкт-Петербург <br> ул. Седова, 11А <br> ст. м. Елизаровская
                 .bc-promo__map-close Скрыть карту
         .bc-promo__right
-            .bc-promo__social
-                .bc-promo__social-icon
-                    svg
-                        use(xlink:href="#share-icon")
-                .bc-promo__social-list
-                    +social_link('#telegram-icon')
-                    +social_link('#instagram-icon')
-                    +social_link('#facebook-icon')
-                    +social_link('#vk-icon')
-                    +social_link('#ok-icon')
-                    +social_link('#twitter-icon')
-
-            a(href="javascript:void(0)").bc-promo__bc-link Страница торгового центра
-
+            include ../components/teorema_social.pug
+            .bc-promo__info
+                .bc-promo__info-title проект:
+                .bc-promo__info-date 32 декабря
+                .bc-promo__info-who Архитектурное бюро
 
     .bc-promo__main
         .bc-promo-galery
             .bc-promo-galery__item
-                img(src="./img/png/evrika_red2.png")
+                .bc-promo-galery__item-img
+                    img(src="./img/png/evrika_red2.png")
+                .bc-promo-galery__item-text Короткая подпись к фотографии
             .bc-promo-galery__item
-                img(src="./img/png/evrika_red3.png")
+                .bc-promo-galery__item-img
+                    img(src="./img/png/evrika_red3.png")
+                .bc-promo-galery__item-text Короткая подпись к фотографии
             .bc-promo-galery__item
-                img(src="./img/png/evrika_red2.png")
+                .bc-promo-galery__item-img
+                    img(src="./img/png/evrika_red2.png")
+                .bc-promo-galery__item-text Короткая подпись к фотографии
         .bc-promo-map
             .bc-promo-map__tooltip
                 .bc-promo-map__tooltip-close
@@ -49,11 +43,10 @@ section.n-block.bc-promo
                     p Торгово-офисный центр <br>45 000 м2 <br>Парковка 640 мест
                 p ул. Седова 11, лит А
 
-
     ul.n-container.bc-promo__last
         li.bc-promo__bullet
             .bc-promo__bullet-title Ставка
-            .bc-promo__bullet-text от 1 800 ₽/м<sup>2</sup>
+            .bc-promo__bullet-text от 1 800 ₽/м²
         li.bc-promo__bullet
             .bc-promo__bullet-title Отделка
             .bc-promo__bullet-text Под ключ
@@ -62,7 +55,7 @@ section.n-block.bc-promo
             .bc-promo__bullet-text 640 мест
         li.bc-promo__bullet
             .bc-promo__bullet-title Площадь
-            .bc-promo__bullet-text 45 000 ₽/м<sup>2</sup>
+            .bc-promo__bullet-text 45 000 ₽/м²
         li.bc-promo__bullet
             .bc-promo__bullet-title Потолки
             .bc-promo__bullet-text 3,4 метра

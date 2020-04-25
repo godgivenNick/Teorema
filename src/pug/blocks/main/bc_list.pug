@@ -1,0 +1,47 @@
+- var img_src = "./img/main_page/bc_list/";
+mixin main_bc_item(title, img_name)
+    a(href="javascript:void(0)").main-bc-list__item
+        .main-bc-list__item-img
+            picture
+                source( srcset= img_src + img_name + ".jpg" type="image/webp")
+                img(
+                    src= img_src + img_name + ".jpg"
+                    srcset= img_src + img_name + ".jpg"
+                    )
+        .main-bc-list__item-footer
+            .main-bc-list__item-row
+                include ../../components/bc_class_icon_A.pug
+                h4= title
+
+section.main-bc-list
+    .n-container.main-bc-list__n-container
+        .main-bc-list__container
+            .main-bc-list__col
+                +main_bc_item("Эврика" , "evrika")
+                +main_bc_item("Обухов-центръ" , "obuhov")
+                +main_bc_item("Зима" , "zima")
+            .main-bc-list__col
+                +main_bc_item("T4" , "t4")
+                a(href="javascript:void(0)").main-bc-list__item
+                    .main-bc-list__item-img
+                        picture
+                            source( srcset = "./img/main_page/bc_list/benua.jpg" type="image/webp")
+                            img(
+                                src = "./img/main_page/bc_list/benua.jpg"
+                                srcset = "./img/main_page/bc_list/benua.jpg"
+                                )
+                    .main-bc-list__item-footer
+                        .main-bc-list__item-row
+                            include ../../components/bc_class_icon_A.pug
+                            h4 Бенуа
+                        span нет свободных помещений
+                +main_bc_item("Лето" , "leto")
+
+            .main-bc-list__col
+                +main_bc_item("H2o" , "h2o")
+                +main_bc_item("Лангензипен" , "langenzipen")
+                +main_bc_item("Осень" , "osen")
+
+        
+        <!-- Это ссылка на страницу со списком всех бизнес-центров -->
+        button.show-more-btn.main-bc-list__show-more-btn Все бизнеc-центры

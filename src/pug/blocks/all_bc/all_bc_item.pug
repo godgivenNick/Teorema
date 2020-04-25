@@ -3,12 +3,28 @@
     .all-bc-item__head
         a(href="javascript:void(0)").all-bc-item__bc-link Бизнес-центр «Лангензипен»
 
+        <!-- если есть награды -->
+        .all-bc-item__rewards
+            .all-bc-item__reward
+                img(src="./img/svg/reward_1.svg", alt="")
+                p «Commercial Real Estate St. Petersburg Awards 2009»
+            .all-bc-item__reward
+                img(src="./img/svg/reward_2.svg", alt="")
+                p «100 лучших офисных и торговых центров России 2017»
+            .all-bc-item__reward
+                img(src="./img/svg/reward_1.svg", alt="")
+                p «Commercial Real Estate St. Petersburg Awards 2009»
+            .all-bc-item__reward
+                img(src="./img/svg/reward_2.svg", alt="")
+                p «100 лучших офисных и торговых центров России 2017»
+
     .all-bc-item__body
         .all-bc-item__body-head
             include ../../components/bc_class_icon_A.pug
             button.all-bc-item__show-content Подробнее
         .all-bc-item__body-content
 
+            <!-- Основаная инфа + кнопка "на карте" -->
             .all-bc-item__body-row
                 ul
                     li
@@ -29,4 +45,23 @@
 
                 button.all-bc-item__show-map
                     .show-map-icon
-                    span 197101, Санкт-Петербург, Дивенская улица, 1
+                    span.main 197101, Санкт-Петербург,<br> Дивенская улица, 1
+                    span.sup скрыть карту
+
+            <!-- Если есть акция -->
+            include ../../components/offer_notice.pug
+            +offer_notice()
+                p <a href="javascript:void(0)">Акция 50/50</a> Новые арендаторы получают в аренду офисы и парковку на полгода за полцены. Предложение действует с 01.02.20 по 30.06.20 г. Подробнее по тел. <a href="tel: 8 (812) 333-0-444">8 (812) 333-0-444</a>.
+
+    .all-bc-item__container
+        a.all-bc-item__img(href="javascript:void(0)")
+            picture
+                <source srcset="./img/jpg/all_bc/lz.jpg" type="image/webp">
+                img(
+                    src = "./img/jpg/all_bc/lz.jpg"
+                    srcset = "./img/jpg/all_bc/lz.jpg"
+                    alt = ""
+                )
+        .all-bc-item__map
+            <!-- Сюды кладем мапу -->
+            include ../../components/bc_map_tooltip.pug

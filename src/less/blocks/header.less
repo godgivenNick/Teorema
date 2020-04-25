@@ -16,7 +16,8 @@
     display: flex;
     align-items: center;
 
-    background-color: var(--text_dark_grey);
+    // background-color: var(--text_dark_grey);
+    background-color: #2A2B2C;
     height: 56px;
 
 
@@ -25,7 +26,13 @@
         flex-shrink: 0;
         cursor: pointer;
 
-        margin-left: 40px;
+        max-width: 127px;
+        display: flex;
+        img {
+            width: 100%;
+        }
+
+        margin-left: 48px;
         &, & * {
             transition: .2s ease-out;
         }
@@ -36,7 +43,6 @@
         }
     }
 }
-
 
 .header-top__middle {
     width: 100%;
@@ -140,7 +146,8 @@
     display: flex;
     align-items: center;
 
-    background-color: var(--text_dark_grey);
+    // background-color: var(--text_dark_grey);
+    background-color: #2A2B2C;
     border-bottom: 1px solid transparent;
 
     flex-shrink: 0;
@@ -243,6 +250,19 @@
 
 
 
+//  для Главной стр
+.main-page {
+
+    .header-top {
+        background: #2A2B2C;
+        border-bottom: 1px solid var(--border_light_grey);
+    }
+
+    .header-bottom {
+        display: none!important;
+    }
+} 
+
 
 
 @media only screen and (max-width: 1919.98px){
@@ -293,6 +313,12 @@
 
 }
 
+
+@media only screen and (max-width: 1440px){
+    [header-btn="filter"] .header-top-btn__title {
+        display: none;
+    }
+}
 
 
 @media only screen and (max-width: 1280px){

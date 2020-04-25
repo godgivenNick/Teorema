@@ -1,0 +1,40 @@
+section.main-promo
+    .main-promo-galery
+        .main-promo-galery__ctrls
+            button.main-promo-galery__prev
+                img(src="./img/svg/arrow_left_white.svg")
+
+            button.main-promo-galery__next
+                img(src="./img/svg/arrow_right_white.svg")
+
+        .main-promo-galery__container
+            .main-promo-galery-slide
+                .main-promo-galery-slide__img
+                    picture
+                        source( srcset="./img/main_page/promo_slide_example_1.jpg" type="image/webp")
+                        img(
+                            src = "./img/main_page/promo_slide_example_1.jpg"
+                            srcset = "./img/main_page/promo_slide_example_1.jpg")
+
+                .main-promo-galery-slide__row
+                    <!-- блок ".main-promo-text" только для первого слайда, в остальных - лишь логотипы бизнец-центров -->
+                    .main-promo-text
+                        .main-promo-text__small
+                            span 23
+                            span Года успешной работы
+                        .main-promo-text__big
+                            h1 Аренда и продажа недвижимости
+
+                    a(href="javascript:void(0)").main-promo-galery-slide__logo
+                        img( src = "./img/main_page/promo_logo_example_1.png" )
+            .main-promo-galery-slide
+                .main-promo-galery-slide__img
+                    picture
+                        source( srcset="./img/main_page/promo_slide_example_1.jpg" type="image/webp")
+                        img(
+                            src = "./img/main_page/promo_slide_example_1.jpg"
+                            srcset = "./img/main_page/promo_slide_example_1.jpg")
+
+                .main-promo-galery-slide__row
+                    a(href="javascript:void(0)").main-promo-galery-slide__logo
+                        img( src = "./img/main_page/promo_logo_example_1.png" )

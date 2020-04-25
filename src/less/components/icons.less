@@ -5,6 +5,7 @@
     margin: 0 3px;
     display: inline-block;
 
+    flex-shrink: 0;
     position: relative;
 
 
@@ -30,7 +31,7 @@
     display: inline-block;
 
     position: relative;
-
+    flex-shrink: 0;
 
     &::before {
         content: '';
@@ -57,4 +58,59 @@
 
     &[data-bc-class="B+"] { background-image: url('../img/svg/class_B+.svg'); }
     &[data-bc-class="A"] { background-image: url('../img/svg/class_A.svg'); }
+}
+
+
+.show-map-icon {
+
+    flex-shrink: 0;
+    background: url('../img/svg/gps_default.svg') no-repeat center center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+
+}
+
+.offer-icon {
+
+    flex-shrink: 0;
+    background: url('../img/svg/spoffer-32.svg') no-repeat center center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+}
+
+
+.teorema-line {
+    width: 100%;
+    max-width: 1312px;
+    margin: 0 auto;
+    height: 1px;
+    background-color: #CFD3D7;
+}
+
+.ext-black-icon {
+    width: 13px;
+    height: 13px;
+    background: url('../img/svg/arrow_external_link_black.svg') no-repeat center center;
+    background-size: cover;
+}
+
+
+@media only screen and (max-width: 767.98px){
+
+    .bc-class-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .show-map-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .offer-icon {
+        width: 24px;
+        height: 24px;
+    }
 }

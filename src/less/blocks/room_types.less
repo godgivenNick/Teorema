@@ -3,14 +3,15 @@
     padding-top: 80px;
 
     h1,h2,h3,h4,h5,h6 {
-        font-size: 24px;
-        line-height: 1.33;
+        font-size: 30px;
+        line-height: 40px;
         font-weight: 500;
         color: var(--text_dark_grey);
 
         text-transform: uppercase;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
+        margin-left: 16px;
 
         margin-bottom: 56px;
     }
@@ -78,7 +79,7 @@
 
     &__sqr {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.71;
         color: var(--text_dark_grey);
 
@@ -88,7 +89,7 @@
 
     &__desc, & > p {
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 1.43;
         color: var(--text_medium_grey);
     }
@@ -199,43 +200,56 @@
 }
 
 
-
-@media only screen and (max-width: 1366px){
-
-
-
-}
-
-
 @media only screen and (max-width: 767.98px){
     
     .room-types {
         padding-top: 64px;
+
+
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 32px;
+            margin-left: 0px;
+
+        }
     }
 
 
     .room-types-card {
         
+        margin-bottom: 64px!important;
+
         &__img {
             margin-bottom: 16px;
 
         }
 
         &__name, h1,h2,h3,h4,h5,h6 {
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 24px;
+            text-decoration: underline;
         }
 
 
         &__sqr {
-            font-size: 12px;
+            font-size: 13px;
+            line-height: 16px;
         }
 
 
         & > p, &__desc {
             font-size: 12px;
+            line-height: 14px;
+            font-weight: 300;
         }
 
     }
 
 
+    .room-types-card__download span {
+        font-size: 10px;
+        letter-spacing: .5px;
+        line-height: 14px;
+    }
 }

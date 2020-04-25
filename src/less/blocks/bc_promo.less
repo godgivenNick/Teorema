@@ -3,16 +3,16 @@
     padding-top: 16px;
     margin-bottom: 0;
 
-    .bc-promo__first {
+    &__first {
         display: flex;
         align-items: stretch;
         justify-content: space-between;
 
-        padding-bottom: 24px;
+        padding-bottom: 32px;
         margin-bottom: 0;
     }
 
-    .bc-promo__last {
+    &__last {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -27,11 +27,11 @@
         align-items: flex-start;
 
         h1,h2,h3,h4,h5,h6 {
-            max-width: 530px;
+            // max-width: 530px;
 
-            font-size: 32px;
+            font-size: 40px;
             font-weight: 500;
-            line-height: 1.25;
+            line-height: 54px;
             color: var(--text_dark_grey);
 
             text-transform: uppercase;
@@ -46,6 +46,37 @@
 
         img {
             max-width: 100%;
+        }
+    }
+
+
+    &__info {
+        text-align: left;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+
+        &-title {
+            font-size: 10px;
+            line-height: 20px;
+            font-weight: 300;
+            color: var(--text_medium_grey);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        &-date {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 700;
+            color: var(--text_dark_grey);
+        }
+        &-who {
+            font-size: 10px;
+            line-height: 13px;
+            font-weight: 400;
+            color: var(--text_dark_grey);
         }
     }
 
@@ -150,7 +181,7 @@
     }
 
 
-    .bc-promo__social {
+    &__social {
         display: flex;
         align-items: center;
 
@@ -225,12 +256,18 @@
 
     &__bc-link {
         padding-right: 24px;
-        font-size: 16px;
-        line-height: 1;
-        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
         color: var(--teorema_green);
 
         position: relative;
+        margin-bottom: 16px;
+        span {
+            text-decoration: underline;
+            transition: .2s ease;
+        }
+
         &::after {
             content: '';
             width: 14px;
@@ -245,6 +282,9 @@
         }
 
         &:hover {
+            span {
+                text-decoration-color: transparent;
+            }
             &::after {
                 transform: translateY(-6px) translateX(6px);
             }
@@ -265,7 +305,7 @@
     &-title {
         font-size: 14px;
         font-weight: 400;
-        line-height: 24px;
+        line-height: 16px;
         letter-spacing: .7px;
         text-transform: uppercase;
         color: var(--text_medium_grey);
@@ -277,7 +317,7 @@
     &-text {
         font-size: 20px;
         font-weight: 500;
-        line-height: 1.5;
+        line-height: 1.2;
         color: var(--text_dark_grey);
     }
 }
@@ -404,6 +444,10 @@
 
 @media only screen and (max-width: 1366px){
 
+    .bc-promo__first {
+        padding-bottom: 32px;
+    }
+    
     .bc-promo .bc-promo__last {
         padding: 48px 15px;
     }
@@ -452,8 +496,16 @@
 
     .bc-promo .bc-promo__first {
         flex-direction: column;
-        padding-bottom: 100px;
+        padding-bottom: 72px;
         position: relative;
+    }
+
+    .bc-promo__right {
+        justify-content: flex-start;
+    }
+
+    .bc-promo__info {
+        align-self: flex-start;
     }
     
 
@@ -468,6 +520,8 @@
     .bc-promo__left h5,
     .bc-promo__left h6 {
         font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
         margin-bottom: 0;
     }
 
@@ -478,12 +532,68 @@
 
 
     .bc-promo__bc-link {
-        align-self: flex-start;
-        margin-top: 8px;
+        margin: 0;
+        margin-bottom: 16px;
     }
 
     .bc-promo__map {
         position: absolute;
         bottom: 16px;
+    }
+
+    .bc-promo__info-date {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .bc-promo__map-icons {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .bc-promo-galery {
+        padding-left: 16px;
+        padding-right: 16px;
+        background:white;
+        .slick-list {
+            padding: 0!important;
+            overflow: initial;
+        }
+
+
+    }
+
+    .bc-promo-map {
+        height: auto;
+    }
+
+    .bc-promo-galery__item {
+        margin-right: 8px;
+
+        // width: 100%;
+
+        &-img {
+            border-radius: 4px;
+            overflow: hidden;
+
+            display: flex;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .bc-promo__map-text p, 
+    .bc-promo__map-text * {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .bc-promo__map-icons img {
+        width: 100%;
+        height: auto;
     }
 }

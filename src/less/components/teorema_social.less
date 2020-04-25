@@ -1,0 +1,79 @@
+.teorema-social {
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 0;
+
+
+    &__icon {
+        order: 2;
+        overflow: hidden;
+        cursor: pointer;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            transition: .2s ease;
+            fill: #adb4b9;
+        }
+
+
+        &:hover {
+            
+            svg {
+                fill: var(--teorema_green);
+            }
+        }
+    }
+
+
+    &__list {
+        opacity: 0;
+        pointer-events: none;
+
+        display: flex;
+        align-items: center;
+        transition: .2s ease-out;
+        padding-right: 24px;
+        a {
+            margin-right: 4px;
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: var(--text_medium_grey);
+                transition: 0.2s ease-out;
+            }
+
+            &:hover,
+            &:active {
+                svg {
+                    fill: var(--teorema_green);
+                }
+            }
+        }
+    }
+
+
+    &:hover,
+    &.active {
+        .teorema-social__list {
+            opacity: 1;
+            pointer-events: initial;
+        }
+
+        .teorema-social__icon {
+            svg {
+                fill: var(--teorema_green);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px){
+
+    .teorema-social {
+        display: none;
+    }
+
+}

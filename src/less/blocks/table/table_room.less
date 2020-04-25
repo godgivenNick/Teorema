@@ -44,7 +44,7 @@
 }
 
 
-/*  Шапка   */
+// Шапка
 .table-head {
 
     display: flex;
@@ -71,7 +71,7 @@
     &__label {
         font-size: 14px;
         line-height: 18px;
-        font-weight: 400;
+        font-weight: 500;
 
         color: var(--text_medium_grey);
         transition: .2s ease;
@@ -99,6 +99,10 @@
         &.table-head__label-class {
             position: absolute;
             left: 224px;
+        }
+        &.table-head__label-plan {
+            position: absolute;
+            left: 431px;
         }
     }
 }
@@ -138,10 +142,8 @@
 }
 
 
-/*  Шапка   */
 
-
-/*  Тело   */
+//Тело
 .table-body {
     width: 100%;
     display: flex;
@@ -154,11 +156,11 @@
         flex-direction: column;
     }
 }
-/*  Тело   */
 
 
 
-/*  Итем   */
+
+//Ите
 .table-room {
     width: 100%;
     display: flex;
@@ -178,7 +180,7 @@
     }
 
 
-    /* шляпа */
+
     &__head {
         width: 100%;
         display: flex;
@@ -235,7 +237,7 @@
             }
         }
     }
-    /* шляпа */
+
 
 
     &__body {
@@ -522,7 +524,7 @@
 }
 
 
-/*  Итем   */
+
 
 .table-head__compare div,
 .table-head__order div {
@@ -533,7 +535,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background-color: var(--teorema_red);
+        background-color: var(--teorema_green);
 
         display: flex;
         justify-content: center;
@@ -558,18 +560,17 @@
     display: flex;
     justify-content: center;
     &.active {
-        border-bottom: 1px dotted var(--text_medium_grey);
         cursor: pointer;
         div {
             color: var(--text_dark_grey);
+            border-bottom: 1px dotted var(--text_medium_grey);
+
             span {
                 display: flex;
             }
         }
     }
 }
-
-/* шапка состояния */
 
 .table-room__map {
     display: flex;
@@ -678,6 +679,9 @@
     .table-head__label.table-head__label-class {
         left: 194px;
     }
+    .table-head__label.table-head__label-plan {
+        left: 310px;
+    }
 
     .table-head__sort {
 
@@ -773,6 +777,16 @@
         left: 400px;
     }
 
+
+    .table-head__compare div span,
+    .table-head__order div span {
+        width: 17px;
+        height: 17px;
+        font-size: 12px;
+        line-height: 18px;
+        top: -2px;
+    }
+
 }
 
 
@@ -806,6 +820,10 @@
         position: relative;
         margin-top: 40px;
         background-color: var(--ghost_white);
+    }
+
+    .table-head__label.table-head__label-plan {
+        left: 285px;
     }
 
 

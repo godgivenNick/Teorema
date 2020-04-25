@@ -40,3 +40,153 @@
     }
 
 }
+
+
+.show-map-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text_medium_grey);
+    text-align: left;
+
+    text-decoration: underline;
+
+    &, * {
+        transition: .2s ease;
+    }
+
+    .show-map-icon {
+        margin-right: 8px;
+    }
+
+    .sup {
+        position: absolute;
+        left: 48px; // +8 из-за разницы шрифтов
+        opacity: 0;
+        text-decoration: underline;
+
+        font-size: 12px;
+    }
+
+    &.active {
+        // font-size: 12px;
+        color: var(--border_light_grey);
+
+        .main {
+            opacity: 0;
+        }
+        .sup {
+            opacity: 1;
+        }
+    }
+}
+
+
+.download-pres {
+
+    display: flex;
+    align-items: center;
+
+    &, * {
+        transition: .2s ease;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        margin-right: 16px;
+
+        transform-origin: center;
+        align-self: center;
+        display: flex;
+    }
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+
+    &__title {
+        color: var(--text_dark_grey);
+        text-decoration: underline;
+        margin-right: 3px;
+        line-height: 18px;
+    }
+
+    &__info {
+        color: var(--text_medium_grey);
+        line-height: 18px;
+        text-decoration: none;
+    }
+
+
+    &:hover {
+
+        .download-pres__icon {
+            transform: translateY(-3px);
+        }
+
+        .download-pres__title {
+            color: var(--teorema_green);
+        }
+    }
+}
+
+
+
+.show-more-btn {
+    height: 48px;
+    border: 1px solid #606E79;
+    border-radius: 4px;
+    padding: 0 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--text_dark_grey);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+
+    &:hover,
+    &:active{
+        background-color: var(--ghost_white);
+        border-color: var(--teorema_green);
+        color: var(--teorema_green);
+    }
+}
+
+
+
+@media only screen and (max-width: 767.98px){
+
+    .show-map-btn {
+
+        font-size: 12px;
+        line-height: 16px;
+    
+        margin-top: 8px;
+    
+        .sup {
+            left: 32px;
+        }
+        
+    }
+
+
+    .show-more-btn {
+        height: 40px;
+        padding: 0 16px;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+}

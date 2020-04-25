@@ -1,52 +1,25 @@
 .plan
     .plan-building
-        .plan__container
-            <!-- Элемент под планировку здания сюды вставляем -->
-        .plan__helper
-            span Есть свободные
-            span Нет свободных
         .plan__floors-container
             p Выберите этаж, чтобы посмотреть планировки
             include plan_floors.pug
             .plan__floors-helper Кликните по фасаду или номеру этажа, чтобы узнать больше о свободных помещениях
+        .plan__helper
+            span Есть свободные
+            span Нет свободных
+        .plan__container
+            <!-- Элемент под планировку здания сюды вставляем -->
 
     .plan-floor(style="display: none;")
         a(href="javascript:void(0)").plan__back-btn Вернуться к фасаду
+        .plan__floors-container
+            include plan_floors.pug
+        include plan_legend.pug
         .plan__container.plan--bordered
             <!-- Элемент под планировку этажа вставляем сюда -->
             include plan_tooltip.pug
         .plan--bordered
-            include plan_legend.pug
-            .plan__floors-container
-                p Выберите этаж
-                include plan_floors.pug
+            .plan-clients-title Арендаторы N-этажа
             include plan_clients.pug
             include plan_cta.pug
             +plan_cta('Запишитесь на просмотр свободных помещений', 'отправить заявку')
-
-//- .plan(style="display: none;")
-
-//-     a(href="javascript:void(0)" style="display: none").plan__back-btn Вернуться к фасаду
-//-     .plan__head
-//-         p Выберите этаж, чтобы посмотреть планировки
-//-         include plan_floors.pug
-
-
-//-     .plan__plan.plan__bc-plan
-//-         <!-- Элемент под планировку здания -->
-//-         .plan__plan-footer
-//-             span Есть свободные помещения
-//-             span Нет свободных помещений
-    
-//-     .plan__plan.plan__floor-plan(style="display: none;")
-//-         <!-- Элемент под планировку этажа -->
-
-//-         .plan__plan-container
-
-//-             include plan_legend.pug
-//-             include plan_clients.pug
-
-//-         include plan_cta.pug
-
-//-     include plan_tooltip.pug
-

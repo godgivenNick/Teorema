@@ -29,6 +29,7 @@
     margin-bottom: 120px;
 
 
+    // Шапка = тайтл + награды, если есть
     &__head {
         width: 100%;
         display: flex;
@@ -38,12 +39,46 @@
         border-bottom: 1px solid #CFD3D7;
     }
 
+    //  Награды
+    &__rewards {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
 
+    &__reward {
+        display: flex;
+        align-items: center;
+        &:not(:first-child){
+            margin-left: 24px;
+        }
+        margin-bottom: 8px;
+
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 400;
+        color: var(--text_medium_grey);
+        text-align: left;
+
+        img {
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
+
+        p {
+            max-width: 120px;
+        }
+    }
+
+
+    // Тайтл, т.е. название бизнес-центра
     &__bc-link {
         //
         max-width: 512px;
         //
 
+        flex-shrink: 0;
         margin-bottom: 16px;
 
         font-size: 24px;
@@ -59,6 +94,7 @@
     }
 
 
+    //  тело, внутри коотрого лежит вся текстовая инфорамция
     &__body {
         width: 100%;
         display: flex;
@@ -67,12 +103,13 @@
         justify-content: flex-start;
 
         padding-top: 24px;
-        padding-bottom: 32px;
+        // padding-bottom: 32px;
 
         position: relative;
     }
 
 
+    //  значок бц + кнопка подробнее для мобилок
     &__body-head {
         left: 0;
         
@@ -101,6 +138,7 @@
         align-items: flex-start;
 
         padding-left: 64px;
+        margin-bottom: 24px;
     }
 
 
@@ -118,6 +156,7 @@
             flex-shrink: 0;
             text-align: left;
             margin-right: 32px;
+            margin-bottom: 8px;
 
             span:first-child {
                 font-size: 10px;
@@ -136,5 +175,306 @@
         }
     }
 
+
+    //  кнопка "На карте"
+    &__show-map {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--text_medium_grey);
+        text-align: left;
+
+        text-decoration: underline;
+
+        &, * {
+            transition: .2s ease;
+        }
+
+        .show-map-icon {
+            margin-right: 8px;
+        }
+
+        .sup {
+            position: absolute;
+            left: 48px; // +8 из-за разницы шрифтов
+            opacity: 0;
+            text-decoration: underline;
+
+            font-size: 12px;
+        }
+
+        &.active {
+            // font-size: 12px;
+            color: var(--border_light_grey);
+
+            .main {
+                opacity: 0;
+            }
+            .sup {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    &__body-row--offer {
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        position: relative;
+
+        .offer-icon {
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+    }
+
+
+    &__body-offer {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: var(--text_medium_grey);
+
+        text-align: left;
+        max-width: 776px;
+
+        a:first-child {
+            letter-spacing: .7px;
+            font-weight: 500;
+            color: var(--teorema_green);
+            text-decoration: underline;
+            text-transform: uppercase;
+            margin-right: 6px;
+            &:hover,
+            &:active {
+                text-decoration-color: transparent;
+            }
+        }
+
+        a:not(:first-child){
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            &:hover,
+            &:active {
+                text-decoration-color: var(--text_dark_grey);
+            }
+        }
+        
+    }
+
+
+    // контейнер, в котором картинка + скрытая мапа
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+
+    //  широкая картинка бц
+    &__img {
+        width: 100%;
+        transition: .55s ease-out;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid var(--teorema_omg_perdal);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            transition: .33s ease-out;
+            transform-origin: center;
+            // width: 100%;
+            // max-width: 100%;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.044);
+            }
+        }
+
+        &.hide {
+            transform-origin: right;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+
+    //  мапа
+    &__map {
+        width: 100%;
+        
+        transition: .55s ease-out;
+        position: absolute;
+        left: calc(100% + 50px);
+        opacity: 0;
+
+        &.show {
+            left: 0;
+            opacity: 1;
+        }
+    }
+
+
+    //  акция
+    .offer-notice {
+        margin-bottom: 16px;
+    }
+
+}
+
+
+@media only screen and (max-width: 1023.98px){
+
+    .all-bc-item__rewards {
+        display: none;
+    }
+
+
+    .all-bc-item {
+        margin-bottom: 80px;
+    }
+
+}
+
+@media only screen and (max-width: 767.98px){
+
+    .all-bc {
+        padding-top: 16px;
+    }
+
+    .all-bc-item {
+        margin-bottom: 56px;
+    }
+
+    .all-bc-item__img {
+        max-height: 180px;
+    }
+
+    .all-bc-item__bc-link {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 8px;
+    }
+
+    .all-bc-item__body {
+        padding-top: 8px;
+    }
+
+    .all-bc-item__show-content {
+        display: flex;
+
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 600;
+        margin-right: 16px;
+        // text-decoration: underline;
+        // text-decoration-style: dotted;
+
+        padding-bottom: 2px;
+        border-bottom: 1px dotted var(--text_dark_grey);
+
+        position: relative;
+        &:after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-left: 1px solid var(--text_dark_grey);
+            border-bottom: 1px solid var(--text_dark_grey);
+            transform: rotate(-45deg);
+
+            position: absolute;
+            right: -15px;
+            bottom: 8px;
+
+            transition: .2s ease;
+        }
+
+        &.active {
+
+            &:after {
+                border-top: 1px solid var(--text_dark_grey);
+                border-right: 1px solid var(--text_dark_grey);
+                border-left: none;
+                border-bottom: none;
+
+                bottom: 5px;
+            }
+        }
+    }
+
+    .all-bc-item__body-content {
+        display: none;
+        padding-top: 8px;
+    }
+
+    .all-bc-item__body-head {
+        width: 100%;
+        position: static;
+        margin-bottom: 8px;
+    }
+
+    .all-bc-item__body-row--offer {
+        display: none;
+    }
+
+    .all-bc-item__body-row {
+        padding-left: 0;
+        margin-bottom: 16px;
+        flex-direction: column;
+    }
+
+    // .all-bc-item__show-map {
+    //     font-size: 12px;
+    //     line-height: 16px;
+
+
+    //     .sup {
+    //         left: 32px;
+    //     }
+    // }
+
+    .all-bc-item__show-map-btn {
+        margin-top: 8px;
+    }
+
+    .all-bc-item ul li span:last-child {
+        font-size: 13px;
+    }
+
+    .all-bc-item ul {
+        width: 100%;
+    }
+
+    .all-bc-item ul li {
+        margin-right: 0;
+
+        width: calc( 100% / 3 );
+
+    }
+
+
+}
+
+@media only screen and (max-width: 460px){
+
+    .all-bc-item ul li {
+        width: 50%;
+    }  
 
 }

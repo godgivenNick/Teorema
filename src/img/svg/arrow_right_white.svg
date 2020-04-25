@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="17" viewBox="0 0 33 17">
+  <g id="arrow" transform="translate(32.5 16.5) rotate(180)">
+    <line id="Line_466" data-name="Line 466" x1="32" transform="translate(0 8)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1"/>
+    <path id="Union_4" data-name="Union 4" d="M8,8,0,0,8,8,0,16Z" transform="translate(8 16) rotate(180)" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

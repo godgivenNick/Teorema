@@ -1,0 +1,12 @@
+section.main-selling
+    .n-container.main-selling__n-container
+        h2 Продажа недвижимости
+            span.triangle-red
+        
+        include ../filter/filter_result_tabs_main.pug
+
+        .main-selling-tcont(data-tab-container-id="main_sale_1")
+            include ./main_selling/main_selling_1.pug
+
+        .main-selling-tcont(data-tab-container-id="main_sale_2")
+            include ./main_selling/main_selling_2.pug

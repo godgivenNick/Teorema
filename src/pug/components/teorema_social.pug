@@ -1,0 +1,16 @@
+mixin social_link(icon_id)
+    a(href="javascript:void(0)")
+        svg
+            use(xlink:href= icon_id)
+
+.teorema-social
+    .teorema-social__icon
+        svg
+            use(xlink:href="#share-icon")
+    .teorema-social__list
+        +social_link('#telegram-icon')
+        +social_link('#instagram-icon')
+        +social_link('#facebook-icon')
+        +social_link('#vk-icon')
+        +social_link('#ok-icon')
+        +social_link('#twitter-icon')

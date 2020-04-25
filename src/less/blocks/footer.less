@@ -112,12 +112,36 @@
         line-height: 24px;
         
         color: var(--teorema_omg_perdal);
-
-        padding: 0 10px;
         &:hover,
         &:active {
             color: var(--white);
         }
+    }
+}
+
+.footer-menu__offer-amount {
+    display: flex;
+    align-items: center;
+    
+
+    div {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: var(--teorema_green);
+
+        margin-left: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 500;
+        color: white;
     }
 }
 
@@ -376,19 +400,31 @@
 
     .footer-top {
 
-        padding: 40px 24px 24px 24px;
+        padding: 24px 0 24px 0;
 
         a:not(.footer-top__logo) {
             padding-left: 0;
         }
     }
 
+    .footer-top__logo {
+        max-width: 120px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .footer-top__row {
+        padding-top: 24px;
+    }
+
 
     .footer-menu {
         padding-top: 24px;
         padding-bottom: 32px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 0px;
+        padding-right: 0px;
 
         a {
             width: 100%;
@@ -411,11 +447,11 @@
         
         p {
             margin-bottom: 24px;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 13px;
+            line-height: 20px;
             a {
-                line-height: 16px;
-                font-size: 16px;
+                line-height: 20px;
+                font-size: 13px;
             }
         }
     }
@@ -444,7 +480,7 @@
             &:first-child {
                 padding: 16px 0;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
 
 
                 position: relative;
@@ -470,16 +506,16 @@
                     text-decoration-color: var(--text_medium_grey);
 
                     &:first-child {
-                        margin-bottom: 10px;
+                        // margin-bottom: 10px;
                     }
                 }
             }
 
 
             &:last-child {
-                align-items: center;
+                align-items: flex-start;
                 padding-top: 24px;
-                padding-bottom: 8px;
+                padding-bottom: 24px;
                 position: relative;
 
                 a {
@@ -521,6 +557,10 @@
 
             &::before { bottom: 0; }
         }
+    }
+
+    .footer-social {
+        align-self: flex-start;
     }
 
 }

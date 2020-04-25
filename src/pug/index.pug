@@ -8,9 +8,6 @@ html(lang="ru")
 		<!-- Шапка -->
 		include blocks/header/header.pug
 
-		//- <!-- Video example -->
-		//- include blocks/video/teorema_video.pug
-
 		//- <!-- Страница "БЦ" -->
 		//- include pages/bc_page.pug
 
@@ -21,7 +18,7 @@ html(lang="ru")
 		//- include pages/spoffer.pug
 
 		//- <!-- Страница "Аренда офиса" -->
-		include pages/rent_office.pug
+		//- include pages/rent_office.pug
 
 		//- <!-- Страница "Аренда офиса. Переход с sitemap" -->
 		//- include pages/rent_office_sitemap.pug
@@ -32,8 +29,14 @@ html(lang="ru")
 		//- <!-- Страница "Все акции" -->
 		//- include pages/spoffer_list.pug
 
-		<!-- Страница "Все Бизнес-центры" -->
-		include pages/all_bc.pug
+		//- <!-- Страница "Все Бизнес-центры" -->
+		//- include pages/all_bc.pug
+
+		//- <!-- Страница "Свободное помещение" -->
+		//- include pages/office.pug
+
+		<!-- Страница "Главная" -->
+		include pages/main.pug
 
 
 		<!-- Footer -->
@@ -44,26 +47,15 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js")
 
 		script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
-		//- script(type="application/javascript" src='./js/jquery.fancybox.min.js')
 		script(type="application/javascript" src='./js/slick.min.js')
 
 		script(type="application/javascript" src='./js/filter.js')
 		script(type="application/javascript" src='./js/main.js')
 		script(type="application/javascript" src='./js/table.js')
 
-		//- 
-		//- script(type="application/javascript" src='./js/n_input_mask.js')
-
-		//- video
-		//- script(type="application/javascript" src='https://vjs.zencdn.net/7.2.3/video.js')
-		//- script(type="application/javascript" src='//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js')
-		//- script(type="application/javascript" src='//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js')
-		//- script(type="application/javascript" src='./js/video.js')
+		//- скрипт только для Главной страницы
+		script(type="application/javascript" src='./js/main_page.js')
 
 		<!-- sprite с svg-иконками -->
 		div#teorema_sprite
 			include components/sprite.pug
-
-		//- form#input_magic_form
-		//-  	input(type="text" name="phone" placeholder="")#input_phone
-		//-     input(type="text" name="card" placeholder="")#input_card

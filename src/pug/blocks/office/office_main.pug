@@ -1,0 +1,9 @@
+section.office-main
+    .n-container.office-main__n-container
+        .office-main-plan(data-tab-container-id="plan")
+            include ../plan/plan_for_office.pug
+
+        .office-main-desc(data-tab-container-id="desc" style="display: none;")
+            include ./office_main_desc.pug
+            .office-main-desc__download-pres
+                include ../../components/download_pres.pug

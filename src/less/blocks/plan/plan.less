@@ -89,7 +89,7 @@
         align-items: center;
         justify-content: center;
 
-        padding-top: 16px;
+        // padding-top: 16px;
 
         p {
             max-width: 180px;
@@ -144,8 +144,8 @@
         }
         &::after {
             left: 25px;
-            bottom: calc(100% - 5px);
-            transform: rotate(315deg);
+            top: calc(100% - 5px);
+            transform: rotate(135deg);
         }
     }
 
@@ -207,7 +207,7 @@
 
         position: absolute;
         left: 0;
-        top: -40px;
+        top: 15px;
 
         &::before {
             content: '';
@@ -378,7 +378,7 @@
         font-size: 12px;
         font-weight: 700;
         line-height: 16px;
-        color: #F09B8F;
+        color: var(--teorema_green);
     }
 
     &-name {
@@ -512,16 +512,20 @@
 
 
 
+.plan-clients-title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+    margin: 16px 0;
+    margin-left: 16px;
+}
+
+
 @media only screen and (max-width: 1366px){
 
     .plan__cta {
         padding: 32px 16px;
     }
-
-    .plan__back-btn {
-        top: -30px;
-    }
-
 
     .plan__cta-title {
         margin-left: 16px;
@@ -534,12 +538,18 @@
 
     .plan__clients {
 
+        // width: 100%;
+        display: block;
+        padding: 0;
+
         a:not(:nth-child(7n+1)) {
             margin-left: 0;
         }
 
         a {
+            // width: auto;
             margin-right: 8px;
+            margin-bottom: 0;
         }
     }
 
@@ -548,6 +558,10 @@
         display: none!important;
     }
 
+    .plan__back-btn {
+        position: relative;
+        top: auto;
+    }
 
     //
     .plan__legend {
@@ -571,6 +585,20 @@
         height: 32px;
     }
 
+    .plan__cta-title {
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 0;
+    }
+
+    .plan-floor .plan__floors-container {
+        margin-top: 16px;
+        padding: 0;
+    }
+
+    .plan-floor .plan__legend {
+        padding: 0;
+    }
 
     .plan__plan-footer {
         width: 100%;
@@ -585,13 +613,29 @@
         align-items: center;
     }
 
+    .plan__helper {
+        padding-top: 8px;
+
+
+        span {
+            padding-left: 12px;
+            padding-right: 12px;
+            font-size: 10px;
+            line-height: 13px;
+            &::before {
+                width: 8px;
+                height: 8px;
+                top: 2px;
+            }
+        }
+    }
     
 
 
     .plan__cta-title {
         align-self: center;
-        margin-left: 12px;
-        margin-bottom: 32px;
+        margin-left: 0;
+        margin-bottom: 16px;
     }
 
     .plan__cta-btn {
@@ -623,6 +667,10 @@
         height: 9px;
         left: 1px;
         top: 1px;
+    }
+
+    .plan__back-btn {
+
     }
 
 

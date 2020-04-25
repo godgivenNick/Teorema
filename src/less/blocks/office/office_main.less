@@ -1,0 +1,83 @@
+.office-main {
+    width: 100%;
+
+    margin-bottom: 80px;
+
+    &__n-container {
+        padding-bottom: 120px;
+        border-bottom: 1px solid #CFD3D7;
+    }
+}
+
+
+.office-main-desc {
+    width: 100%;
+
+    padding-top: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: calc(50% - 32px);
+    }
+
+
+    &__download-pres {
+        margin: 0 auto;
+        margin-top: 24px;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.office-main-desc-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    margin-bottom: 40px;
+
+    & > * {
+        padding-right: 15px;
+    }
+
+    text-align: left;
+
+
+    h3,h4,h5,h6 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        letter-spacing: .8px;
+        color: var(--text_dark_grey);
+
+        text-transform: uppercase;
+
+        padding-bottom: 4px;
+        border-bottom: 1px solid #DEE1E3;
+        margin-bottom: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: var(--text_dark_grey);
+    }
+}

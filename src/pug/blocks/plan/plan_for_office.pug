@@ -1,0 +1,15 @@
+.plan.plan-for-office
+    .plan-floor
+        .plan__floors-container
+            p Выберите этаж
+            include plan_floors.pug
+        include plan_legend.pug
+        .plan__container.plan--bordered
+            <!-- Элемент под планировку этажа вставляем сюда -->
+            include plan_tooltip.pug
+        .plan--bordered
+            .plan-clients-title Арендаторы N-этажа
+            include plan_clients.pug
+            include plan_cta.pug
+            +plan_cta('Поможем выбрать помещение в бц «название» ', 'оставить заявку')
+

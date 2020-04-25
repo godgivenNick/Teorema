@@ -1,8 +1,5 @@
 .table-double
 
-    <!-- Примененные фильтры -->
-    include ../filter/filter_result_legend.pug
-
     <!-- Табы -->
     include ../filter/filter_result_tabs.pug
 
@@ -27,6 +24,8 @@
                 .table-head__label(table-col="1") Свободно 666 помещений
                 a(href="javascript:void(0)").table-head__label.table-head__sort.table-head__label-class
                     span Класс
+                a(href="javascript:void(0)").table-head__label.table-head__label-plan
+                    span План этажа
                 a(href="javascript:void(0)" table-col="2").table-head__label.table-head__sort.active 
                     span Площадь
                 a(href="javascript:void(0)" table-col="3").table-head__label.table-head__sort 

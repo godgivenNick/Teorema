@@ -38,9 +38,18 @@ if(document.querySelector('.bc-promo__main')){
         slidesToShow: 1,
         draggable: false,
         pauseOnHover: true,
-        autoplay: true,
+        // autoplay: true,
         accessibility: false,
         arrows: false,
+        responsive: [
+
+            {
+              breakpoint: 768,
+              settings: {
+                variableWidth: false,
+              }
+            },
+        ]
     });
 
 
@@ -64,26 +73,6 @@ if(document.querySelector('.bc-promo__main')){
             }
         }
     });
-
-
-    //  Поделиться в социалках
-    document.addEventListener('click', function(e){
-
-        if(e.target.closest('.bc-promo__social-icon')){
-            var social = e.target.closest('.bc-promo__social');
-            if(!social.classList.contains('active')){
-                social.classList.add('active');
-            } else {
-                social.classList.remove('active');
-
-            }
-        } else if(!e.target.closest('.bc-promo__social')){
-            document.querySelector('.bc-promo__social').classList.remove('active');
-        }
-
-
-    });
-
 }
 
 
@@ -280,7 +269,7 @@ function close_all_header_nodes(){
             header_opened_btn.querySelector('.header-top-btn__title').innerHTML = 'Меню';
         }
         else if(header_opened_btn.getAttribute('header-btn') == 'filter'){
-            header_opened_btn.querySelector('.header-top-btn__title').innerHTML = 'Найти помещение';
+            header_opened_btn.querySelector('.header-top-btn__title').innerHTML = 'Арендовать помещение';
         }
 
         document.querySelector('.header-top-btn.opened').classList.remove('opened');
@@ -299,7 +288,9 @@ function close_all_header_nodes(){
     document.body.style.height = 'auto';
 
     // 4    вернуть вывод БЦ
-    document.querySelector('.header-bottom').style.display = 'flex';
+    if( $('.header-bottom').exists() ) {
+        document.querySelector('.header-bottom').style.display = 'flex';
+    }
 };
 
 document.addEventListener('click', function(e){
@@ -330,7 +321,9 @@ document.addEventListener('click', function(e){
             document.body.style.height = '100vh';
 
             // 5    отключить вывод БЦ
-            document.querySelector('.header-bottom').style.display = 'none';
+            if( $('.header-bottom').exists() ) {
+                document.querySelector('.header-bottom').style.display = 'none';
+            }
             
         } 
 
@@ -370,14 +363,14 @@ header_search.querySelector('input').addEventListener('input', function(e){
 //  слайдер для плитки клиентов в планировке
 window.plan_clients_slider = function(){
 
-    if( $( window ).width() > 1024 && $('.plan__clients').hasClass('slick-initialized') ){
+    // if( $( window ).width() > 1025 && $('.plan__clients').hasClass('slick-initialized') ){
 
-        $('.plan__clients').slick('unslick');
-        return;
-    }
+        // $('.plan__clients').slick('unslick');
+        // return;
+    // }
 
 
-    if( $( window ).width() <= 1024 ){
+    if( $( window ).width() < 1025 ){
 
         $('.plan__clients').slick({
             infinite: true,
@@ -387,13 +380,13 @@ window.plan_clients_slider = function(){
             dots: false,
             responsive: [
 
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 2,
-                  }
-                },
+                // {
+                //   breakpoint: 1024,
+                //   settings: {
+                //     slidesToShow: 5,
+                //     slidesToScroll: 2,
+                //   }
+                // },
                 {
                   breakpoint: 768,
                   settings: {
@@ -427,21 +420,12 @@ window.plan_clients_slider = function(){
     }
 };
 
+// setTimeout(window.plan_clients_slider(), 500);
 window.plan_clients_slider();
 $(window).resize(function(){
-    window.plan_clients_slider();
+    // window.plan_clients_slider();
 });
 
-
-
-//
-if(document.querySelector('.form-callback')){
-
-    function callback_form_valid(){
-
-    }
-
-}
 
 
 
@@ -477,9 +461,15 @@ if( $('.filter-result-tabs').exists() ){
             if( !$(this).hasClass('active') ){
     
                 //  убрать актив
-                var active_tab_id = $('.filter-result-tabs__tab.active').attr('data-f-result-tab');
+                var active_tab_id = $('.filter-result-tabs__tab.active').attr('data-f-result-tab') ? $('.filter-result-tabs__tab.active').attr('data-f-result-tab') : $('.filter-result-tabs__tab.active').attr('data-tab-id');
                 $('.filter-result-tabs__tab.active').removeClass('active');
                 $('.table[data-f-result-tab="' + active_tab_id + '"]').fadeOut();
+
+                //  !!! если табы не для таблицы
+                if($(this).attr('data-f-result-tab') == undefined){
+                    $('[data-tab-container-id="' + active_tab_id + '"]').fadeOut();
+                }
+                
     
                 
                 // добавить актив
@@ -489,8 +479,13 @@ if( $('.filter-result-tabs').exists() ){
                 window.calc_f_results_toddler();
                 
                 // открыть таб
-                var tab_id = $(this).attr('data-f-result-tab');
+                var tab_id = $(this).attr('data-f-result-tab') ? $(this).attr('data-f-result-tab') : $(this).attr('data-tab-id');
                 $('.table[data-f-result-tab="' + tab_id + '"]').fadeIn();
+
+                //  !!! если табы не для таблицы
+                if($(this).attr('data-f-result-tab') == undefined){
+                    $('[data-tab-container-id="' + tab_id + '"]').fadeIn();
+                }
     
             } else {
                 return;
@@ -636,7 +631,6 @@ if( $('.text-expand').exists() ){
 
 
 //  кнопка "Наверх"
-
 if( $('#up_btn').exists() ){
 
     var up_btn = $('#up_btn');
@@ -660,9 +654,256 @@ if( $('#up_btn').exists() ){
 }
 
 
+//  1) Показать карту для выгрузки всех БЦ
+//  2) Кнопка "подробнее"
+
+window.all_bc_control = function(){
+
+    if( $('.all-bc-item').exists() ){
+
+        $('.all-bc-item').each(function(){
+
+            var bc = $(this),
+                bc_map_btn = bc.find('.all-bc-item__show-map'),
+                bc_img = bc.find('.all-bc-item__img'),
+                bc_map = bc.find('.all-bc-item__map'),
+                
+                bc_content = bc.find('.all-bc-item__body-content'),
+                bc_content_btn = bc.find('.all-bc-item__show-content');
+
+
+            //  1) Показать/скрыть карту
+            bc_map_btn.on('click', function(){
+
+                if( !bc_map_btn.hasClass('active') ){
+
+                    bc_map_btn.addClass('active');
+
+                    bc_img.addClass('hide');
+                    bc_map.addClass('show');
+                } else {
+
+                    bc_map_btn.removeClass('active');
+
+                    bc_img.removeClass('hide');
+                    bc_map.removeClass('show');
+                }
+
+            });
+
+
+            //  2) Показать/скрыть контент ( для мобилок )
+            bc_content_btn.on('click', function(){
+
+                if( !bc_content_btn.hasClass('active') ){
+
+                    bc_content_btn.addClass('active');
+                    bc_content_btn.text('Скрыть');
+
+                    bc_content.fadeIn();
+                } else {
+
+                    bc_content_btn.removeClass('active');
+                    bc_content_btn.text('Подробнее');
+
+                    bc_content.fadeOut();
+                }
+
+            });
+
+            
+        });
+
+    }
+
+};
+window.all_bc_control();
 
 
 
+//  Поделиться в соц. сетях ( иконка, по клику список социалок )
+if( $('.teorema-social').exists() ){
+
+    document.addEventListener('click', function(e){
+
+        if(e.target.closest('.teorema-social__icon')){
+
+            var social = e.target.closest('.teorema-social');
+
+            if(!social.classList.contains('active')){
+                social.classList.add('active');
+            } else {
+                social.classList.remove('active');
+            }
+
+        } else if(!e.target.closest('.teorema-social')){
+
+            Array.from(document.querySelectorAll('.teorema-social')).forEach(function(each){
+                each.classList.remove('active')
+            });
+        }
+    });
+
+}
+
+
+//  Галерея #1 ( стрелочки вне контейнера, к фоткам есть подпись )
+if( $('.teorema-galery-1').exists() ){
+
+    $('.teorema-galery-1__container').slick({
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 1,
+        draggable: false,
+        accessibility: false,
+        arrows: true,
+
+        prevArrow: ".teorema-galery-1__prev",
+        nextArrow: ".teorema-galery-1__next",
+
+        dots: true,
+        dotsClass: 'teorema-galery-1__dots',
+        appendDots: '.teorema-galery-1',
+    });
+
+}
+
+
+//  Переключалка между галереей и мапов дял стр. "Свободное помещение"
+if( $('.office-promo').exists() ){
+
+
+
+}
+
+window.promo_galery_map_toggler = function(){
+
+    if( $('.office-promo').exists() ){
+
+        var promo = $('.office-promo'),
+            promo_map_btn = promo.find('.office-promo__show-map-btn'),
+            promo_galery = promo.find('.office-promo-main__galery'),
+            promo_map = promo.find('.office-promo-main__map');
+
+        //  высота мапы == высоте галереи
+        promo_map.find('iframe').height(promo_galery.height());
+
+        console.log(promo_galery.height());
+        
+
+        //  показать/скрыть мапу
+        promo_map_btn.on('click', function(){
+
+            if( !promo_map_btn.hasClass('active') ){
+                promo_map_btn.addClass('active');
+
+                promo_galery.addClass('hide');
+                promo_map.addClass('show');
+
+            } else {
+                promo_map_btn.removeClass('active');
+
+                promo_galery.removeClass('hide');
+                promo_map.removeClass('show');
+            }
+
+        });
+    }
+
+};
+window.promo_galery_map_toggler();
+
+
+
+
+
+
+//  22.04
+
+//  Слайдер "Эксклюзивные предложения"
+
+if( $('.exclusive-offer').exists() ){
+
+    $('.exclusive-offer-list__container').slick({
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 4,
+        draggable: false,
+        accessibility: false,
+        arrows: true,
+
+        speed: 600,
+        // fade: true,
+
+        prevArrow: ".exclusive-offer-list__prev",
+        nextArrow: ".exclusive-offer-list__next",
+
+        dots: true,
+        dotsClass: 'exclusive-offer-list__dots',
+        appendDots: '.exclusive-offer-list',
+
+        responsive: [
+
+            // {
+            //   breakpoint: 1366,
+            //   settings: {
+            //     slidesToShow: 6,
+            //     slidesToScroll: 3,
+            //   }
+            // },
+            // {
+            //   breakpoint: 1024,
+            //   settings: {
+            //     slidesToShow: 4,
+            //     slidesToScroll: 2,
+            //   }
+            // },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              }
+            },
+
+            {
+                breakpoint: 460,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                //   centerPadding: '100px',
+                }
+            },
+            // {
+            //     breakpoint: 640,
+            //     settings: {
+            //       slidesToShow: 2,
+            //       slidesToScroll: 1,
+            //     }
+            // },
+            // {
+            //     breakpoint: 425,
+            //     settings: {
+            //       slidesToShow: 1,
+            //       slidesToScroll: 1,
+            //     }
+            // },
+        ]
+    });
+
+}
+
+
+    // $('.parallax').each(function(){
+    //   var $bgobj = $(this); // создаем объект
+    //   $(window).scroll(function() {
+    //     var yPos = -($window.scrollTop() / $bgobj.data('speed')); // вычисляем коэффициент 
+    //     // Присваиваем значение background-position
+    //     var coords = 'center '+ yPos + 'px';
+    //     // Создаем эффект Parallax Scrolling
+    //     $bgobj.css({ backgroundPosition: coords });
+    //   });
+    // });
 
 //  END
 });

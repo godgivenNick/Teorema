@@ -1,0 +1,123 @@
+.teorema-galery-1 {
+
+    position: relative;
+
+
+    //  Взад/Назад
+    &__prev,
+    &__next {
+        flex-shrink: 0;
+        width: 64px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+
+        position: absolute;
+        top: calc(50% - 16px);
+
+        img {
+            transition: .2s ease;
+        }
+    }
+    &__prev {
+        justify-content: flex-start;
+        right: 100%;
+
+        &:hover,
+        &:active {
+            img {
+                transform: translateX(-16px);
+            }
+        }
+    }
+    &__next {
+        justify-content: flex-end;
+        left: 100%;
+
+        &:hover,
+        &:active {
+            img {
+                transform: translateX(16px);
+            }
+        }
+    }
+
+
+    //  Dots'ы
+    &__dots {
+
+        position: absolute;
+        bottom: 56px;
+        left: 0;
+        width: 100%;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        li {
+    
+            &:not(:last-child){
+                margin-right: 24px;
+            }
+
+            border: 1px solid transparent;
+            border-radius: 50%;
+            overflow: hidden;
+    
+            button {
+                cursor: pointer;
+                color: transparent;
+                transition: .2s ease;
+
+                border-radius: 50%;
+
+                width: 16px;
+                height: 16px;
+                background-color: rgba(255,255,255,.5);
+            }
+
+            &:hover {
+                border-color: rgba(255,255,255, .5);
+
+                button {
+                    background-color: rgba(255,255,255, .75);
+                }
+            }
+    
+            &.slick-active {
+                border-color: var(--text_dark_grey);
+    
+                button {
+                    background-color: rgba(255,255,255, 1);
+                    border: 1px solid var(--text_dark_grey);
+                }
+            }
+        }
+    }
+
+    &__slide {
+
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 14px;
+        color: var(--text_dark_grey);
+
+        &-desc {
+            // text-align: right;
+            align-self: flex-end;
+            margin-top: 12px;
+        }
+    }
+
+
+    //
+    .slick-list {
+        padding: 0!important;
+    }
+}
