@@ -1,0 +1,36 @@
+mixin bpp_benefit( img_name, desc )
+    .bpp-benefits-list-item
+        .bpp-benefits-list-item__img
+            img(src="./img/bpp/bpp_b_" + img_name + ".svg")
+        .bpp-benefits-list-item__text= desc
+
+section.promo.promo-row.bpp-benefits
+    .n-container.promo-row__n-container
+        .promo__left
+            h3 преимущества <br>БП «Полюстрово»
+                span.triangle-red
+        .promo__right
+            .bpp-benefits-list
+                .bpp-benefits-list__container
+                    .bpp-benefits-list__row
+                        +bpp_benefit( 'class', 'Класс бизнес-центров в деловом квартале «Полюстрово»' )
+                        +bpp_benefit( 'quality', 'Высокие стандарты обслуживания от УК «Теорема»' )
+                        +bpp_benefit( 'app', 'Мобильное приложение для арендаторов' )
+                    .bpp-benefits-list__row
+                        +bpp_benefit( 'parking', 'Парковка на 1 120 машино-мест и велопарковка' )
+                        +bpp_benefit( 'bus', 'Бесплатные автобусы от/до станции метро «Пл. Ленина»' )
+                        +bpp_benefit( 'internet', 'Высокоскоростной интернет и  IP-телефония' )
+                    .bpp-benefits-list__row
+                        +bpp_benefit( 'food', 'Кафе и рестораны в зданиях и на территории' )
+                        +bpp_benefit( 'cleaning', 'Ежедневная уборка помещений, мытье фасадов и окон' )
+                        +bpp_benefit( 'climat', 'Вентиляция и кондиционеры в зданиях' )
+                    .bpp-benefits-list__row
+                        +bpp_benefit( '24x7', 'Круглосуточный доступ в бизнес-центры' )
+                        +bpp_benefit( 'video', 'Видеонаблюдение на территории парка и в зданиях' )
+                        +bpp_benefit( 'sequrity', 'Контроль доступа на территорию и в здания' )
+
+                .bpp-benefits-list__ctrls
+                    button.bpp-benefits-list__prev
+                        img(src="./img/svg/arrow_left.svg")
+                    button.bpp-benefits-list__next
+                        img(src="./img/svg/arrow_right.svg")

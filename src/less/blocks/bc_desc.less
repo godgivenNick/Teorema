@@ -46,18 +46,28 @@
         }
     }
 
+    &__text {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: var(--text_dark_grey);
+        background-color: #fff;
+    }
+
 
     &__show-btn {
         font-size: 16px;
         font-weight: 500;
         line-height: 1;
-        color: var(--teorema_green);
+        color: var(--text_dark_grey);
 
         margin-top: 24px;
-        border-bottom: 1px dotted var(--teorema_green);
+        border-bottom: 1px dotted var(--text_dark_grey);
         &:hover,
         &:active {
-            border-bottom-color: transparent;
+            color: var(--teorema_green);
+            border-bottom-color: var(--teorema_green);
+
         }
 
     }
@@ -101,6 +111,12 @@
 
 
         &__content {
+            p {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+        &__text {
             p {
                 font-size: 13px;
                 line-height: 20px;

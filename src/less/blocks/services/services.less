@@ -1,0 +1,131 @@
+.services-list {
+
+
+    &__n-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    &__list {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+}
+
+
+.services-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #CFD3D7;
+
+
+    &__title {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--text_dark_grey);
+
+        width: 432px;
+        flex-shrink: 0;
+    }
+
+
+    &__content {
+        width: 100%;
+        padding-left: 112px;
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 300;
+            color: var(--text_dark_grey);
+        }
+    }
+
+
+    .text-expand__btn {
+        margin-top: 14px;
+        padding-bottom: 0;
+        border-bottom: 0;
+        text-decoration: underline;
+    }
+}
+
+
+.review-author {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text_dark_grey);
+    font-weight: 300;
+    text-align: right;
+    align-self: right;
+    font-style: italic;
+    margin-top: 16px;
+}
+
+
+@media only screen and (max-width: 1366px){
+
+    .services-item {
+
+        &__content {
+
+            padding-left: 0;
+
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 767.98px){
+
+    .review-author {
+        font-size: 10px;
+        line-height: 14px;
+
+        margin-top: 32px;
+    }
+
+    .services-item {
+        padding-left: 0;
+        padding-right: 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+
+        &__title {
+            width: 100%;
+            margin-bottom: 8px;
+
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: .8px;
+        }
+
+
+        &__content {
+
+            p {
+                font-size: 13px;
+                line-height: 20px;
+
+            }
+        }
+    }
+
+}

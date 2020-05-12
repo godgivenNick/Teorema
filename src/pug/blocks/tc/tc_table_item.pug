@@ -1,0 +1,63 @@
+.table-tc
+    .table-tc__body
+        .table-tc__org( data-tc-col="1" )
+            .table-tc__logo
+                img(src="./img/tc/tc_table_logo_1.jpg")
+            a(href="javascript:void(0)").table-tc__client
+                .table-tc__client-office 666
+                .table-tc__client-name Имя организации
+                .table-tc__client-business Деятельность
+        div( data-tc-col="2").table-tc__onplan
+            a(href="javascript:void(0)").table-tc__onplan-btn
+                .table-tc__onplan-btn-icon
+                span 1 этаж
+        .table-tc__tel( data-tc-col="3" )
+            a(href="tel: 633-32-60") 633-32-60
+        .table-tc__work-time( data-tc-col="4" )
+            span 11 :00– 20:00
+
+    .table-tc__plan
+        .table-tc__plan-col
+            include ../plan/plan_legend_tc.pug
+            .plan__container.plan--bordered
+                .plan-tooltip.plan-tooltip--min
+                    img(src="./img/svg/escalator.svg")
+                .plan-tooltip.plan-tooltip--min
+                    img(src="./img/svg/stairs.svg")
+
+                p !!! Комментарий !!! Тултип ниже растягивается, т.к. лежит внутри контейнера без   абсолютного позиционирования. Так что не вонлуемся
+                .plan-tooltip.plan-tooltip--org
+                    img(src="./img/tc/tc_table_logo_1.jpg")
+                    .plan-tooltip__org-name Имя организации
+
+.table-tc
+    .table-tc__body
+        .table-tc__org( data-tc-col="1" )
+            .table-tc__logo
+                img(src="./img/tc/tc_table_logo_2.jpg")
+            a(href="javascript:void(0)").table-tc__client
+                .table-tc__client-office 666
+                .table-tc__client-name Имя организации
+                .table-tc__client-business Деятельность
+        div( data-tc-col="2").table-tc__onplan
+            a(href="javascript:void(0)").table-tc__onplan-btn
+                .table-tc__onplan-btn-icon
+                span 1 этаж
+        .table-tc__tel( data-tc-col="3" )
+            a(href="tel: 633-32-60") 633-32-60
+        .table-tc__work-time( data-tc-col="4" )
+            span 11 :00– 20:00
+
+    .table-tc__plan
+        .table-tc__plan-col
+            include ../plan/plan_legend_tc.pug
+            .plan__container.plan--bordered
+                .plan-tooltip.plan-tooltip--min
+                    img(src="./img/svg/escalator.svg")
+                .plan-tooltip.plan-tooltip--min
+                    img(src="./img/svg/stairs.svg")
+
+                p !!! Комментарий !!! Тултип ниже растягивается, т.к. лежит внутри контейнера без   абсолютного позиционирования. Так что не вонлуемся
+                .plan-tooltip.plan-tooltip--org
+                    img(src="./img/tc/tc_table_logo_1.jpg")
+                    .plan-tooltip__org-name Имя организации

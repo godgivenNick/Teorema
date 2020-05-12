@@ -1,0 +1,19 @@
+
+.tc-main__header
+    a(href="javascript:void(0)").tc-main__back-btn
+        .tc-main__back-btn-icon
+        .tc-main__back-btn-text Назад
+    .filter-result-tabs.tc-main__filter-result-tabs
+
+        a(href="javascript:void(0)" data-tc-main-card="shops").filter-result-tabs__tab.active Магазины
+        a(href="javascript:void(0)" data-tc-main-card="cafe").filter-result-tabs__tab кафе и рестораны
+        a(href="javascript:void(0)" data-tc-main-card="fitness").filter-result-tabs__tab Фитнес-центр
+        a(href="javascript:void(0)" data-tc-main-card="bankomat").filter-result-tabs__tab Банкоматы
+        a(href="javascript:void(0)" data-tc-main-card="others").filter-result-tabs__tab прочие услуги
+        span.filter-result-tabs__toddler
+
+        .tc-main__search
+            a(href="javascript:void(0)").tc-main__search-icon
+                svg
+                    use(xlink:href="#search-icon")
+            input(type="text" placeholder="Например: Детские товары").tc-main__search-field

@@ -1,0 +1,110 @@
+section.n-block.bc-promo.bpp-promo.tc-promo
+    .n-container.bc-promo__first
+        .bc-promo__left
+            .bc-promo__logo
+                img(src="./img/bpp/bpp_logo.svg")
+            h1 Уникальный деловой квартал
+            a.bc-promo__map(href="javascript:void(0)")
+                .bc-promo__map-icons
+                    img(src="./img/svg/gps_default.svg")
+                    img(src="./img/svg/gps_hover.svg")
+                .bc-promo__map-text
+                    p Санкт-Петербург, Калининский район, квартал «Полюстрово»
+                .bc-promo__map-close Скрыть карту
+        .bc-promo__right
+            include ../../components/teorema_social.pug
+            .bc-promo__info
+                .bc-promo__info-title проект:
+                .bc-promo__info-date NPS Tchoban Voss
+                .bc-promo__info-who Архитектурное бюро (Германия)
+
+    .bc-promo__main
+        .bc-promo-galery.bpp-promo-galery
+
+            <!-- Плюсики для взаимодействия с объектами -->
+            div(style="position: absolute; left: 20px; top: 20px; display: flex; align-items:center;")
+            
+                a(href="javascript:void(0)").bpp-promo-galery__plus
+                    .bpp-promo-galery__plus-xmark
+                    .bpp-promo-galery__plus-circle
+
+                a(href="javascript:void(0)").bpp-promo-galery__plus.active
+                    .bpp-promo-galery__plus-xmark
+                    .bpp-promo-galery__plus-circle
+
+                .bc-promo-map__tooltip(style="z-index: 2;")
+                    .bc-promo-map__tooltip-close
+                    .bc-promo-map__tooltip-logo
+                        img(src="./img/bpp/5stars.svg")
+                    .bc-promo-map__tooltip-text
+                        p Жилой комплекс <br>Парковка 666 мест
+                    a(href="javascript:void(0)").bc-promo-map__tooltip-detail Подробнее
+                    
+
+            .bpp-promo-galery__ctrls
+                button.bpp-promo-galery__prev
+                    img(src="./img/svg/arrow_left_white.svg")
+
+                button.bpp-promo-galery__next
+                    img(src="./img/svg/arrow_right_white.svg")
+
+                .bpp-promo-galery__bpp-ctrls
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 1
+                        .bpp-promo-galery__plus-circle
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 2
+                        .bpp-promo-galery__plus-circle
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 3
+                        .bpp-promo-galery__plus-circle
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 4
+                        .bpp-promo-galery__plus-circle
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 5
+                        .bpp-promo-galery__plus-circle
+                    a(href="javascript:void(0)").bpp-promo-galery__plus
+                        .bpp-promo-galery__plus-num 6
+                        .bpp-promo-galery__plus-circle
+
+
+            .bpp-promo-galery__container
+
+                .bc-promo-galery__item
+                    .bc-promo-galery__item-img
+                        img(src="./img/bpp/bpp_promo_slide_1.jpg")
+                    .bc-promo-galery__item-text Короткая подпись к фотографии
+                .bc-promo-galery__item
+                    .bc-promo-galery__item-img
+                        img(src="./img/bpp/bpp_promo_slide_1.jpg")
+                    .bc-promo-galery__item-text Короткая подпись к фотографии
+                .bc-promo-galery__item
+                    .bc-promo-galery__item-img
+                        img(src="./img/bpp/bpp_promo_slide_1.jpg")
+                    .bc-promo-galery__item-text Короткая подпись к фотографии
+
+        .bc-promo-map
+            .bc-promo-map__tooltip
+                .bc-promo-map__tooltip-close
+                .bc-promo-map__tooltip-logo
+                    img(src="./img/svg/logo_evrika.svg")
+                .bc-promo-map__tooltip-text
+                    p Торгово-офисный центр <br>45 000 м2 <br>Парковка 640 мест
+                p ул. Седова 11, лит А
+
+    ul.n-container.bc-promo__last
+        li.bc-promo__bullet
+            .bc-promo__bullet-title 1 210
+            .bc-promo__bullet-text Число парковочных мест
+        li.bc-promo__bullet
+            .bc-promo__bullet-title 160 000 м²
+            .bc-promo__bullet-text Площадь Бизнес-Парка
+        li.bc-promo__bullet
+            .bc-promo__bullet-title 66 000 м²
+            .bc-promo__bullet-text Площадь офисных зданий
+        li.bc-promo__bullet
+            .bc-promo__bullet-title 77 000 м²
+            .bc-promo__bullet-text Площадь парка с озером
+
+<!-- На мобилке ( < 768px ) вырубаем слайдер, оставляем тока 1ый слайд. Вместо пагинации там иконки для взаимодействия ( подсветки ) объектов -->

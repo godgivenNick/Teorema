@@ -29,16 +29,18 @@ function is_lower_768(){
 
 
 //  Слайдер главного разворота
-if(document.querySelector('.bc-promo__main')){
+if( $('.bc-promo__main').exists() ){
 
-    $('.bc-promo-galery').slick({
+    // ТЦ + БЦ
+
+    $('.bc-promo-galery:not(.bpp-promo-galery)').slick({
         infinite: true,
         centerMode: true,
         variableWidth: true,
         slidesToShow: 1,
         draggable: false,
         pauseOnHover: true,
-        // autoplay: true,
+        autoplay: true,
         accessibility: false,
         arrows: false,
         responsive: [
@@ -73,6 +75,62 @@ if(document.querySelector('.bc-promo__main')){
             }
         }
     });
+}
+
+
+if( $('.bpp-promo-galery').exists() ){
+
+
+    if(client_width >= 768 ){
+
+        //  БПП
+        $('.bpp-promo-galery__container').slick({
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 1,
+            draggable: false,
+            pauseOnHover: true,
+            accessibility: false,
+    
+            arrows: true,
+            prevArrow: ".bpp-promo-galery__prev",
+            nextArrow: ".bpp-promo-galery__next",
+    
+            dots: true,
+            dotsClass: 'bpp-promo-galery__dots',
+            appendDots: '.bpp-promo-galery__ctrls',
+    
+    
+        });
+
+    }
+
+    
+    // Преимущества
+    if(client_width < 1024 ){
+
+        //  БПП
+        $('.bpp-benefits-list__container').slick({
+            infinite: false,
+            // centerMode: true,
+            slidesToShow: 2,
+            draggable: false,
+            accessibility: false,
+    
+            arrows: true,
+            prevArrow: ".bpp-benefits-list__prev",
+            nextArrow: ".bpp-benefits-list__next",
+    
+            dots: true,
+            dotsClass: 'bpp-benefits-list__dots',
+            appendDots: '.bpp-benefits-list__ctrls',
+    
+        });
+        
+    }
+
+
+
 }
 
 
@@ -183,7 +241,7 @@ if(document.querySelector('.n-dropdown')){
 
 
 //
-if(document.querySelector('.bc-desc')){
+if(document.querySelector('.bc-desc__content')){
 
     var bc_text = document.querySelector('.bc-desc__content p');
     var bc_text_height = window.getComputedStyle(bc_text).height;
@@ -714,7 +772,7 @@ window.all_bc_control = function(){
 
                     bc_content.fadeOut();
                 }
-
+                
             });
 
             
@@ -756,21 +814,30 @@ if( $('.teorema-social').exists() ){
 //  Галерея #1 ( стрелочки вне контейнера, к фоткам есть подпись )
 if( $('.teorema-galery-1').exists() ){
 
-    $('.teorema-galery-1__container').slick({
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 1,
-        draggable: false,
-        accessibility: false,
-        arrows: true,
+    var teorema_galery_1_slides = $('.teorema-galery-1 .teorema-galery-1__slide').length;
 
-        prevArrow: ".teorema-galery-1__prev",
-        nextArrow: ".teorema-galery-1__next",
+    if( teorema_galery_1_slides > 1 ){
 
-        dots: true,
-        dotsClass: 'teorema-galery-1__dots',
-        appendDots: '.teorema-galery-1',
-    });
+        $('.teorema-galery-1__container').slick({
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 1,
+            draggable: false,
+            accessibility: false,
+            arrows: true,
+    
+            prevArrow: ".teorema-galery-1__prev",
+            nextArrow: ".teorema-galery-1__next",
+    
+            dots: true,
+            dotsClass: 'teorema-galery-1__dots',
+            appendDots: '.teorema-galery-1',
+        });
+    } else {
+        $('.teorema-galery-1').addClass('no-init');
+    }
+    
+
 
 }
 
@@ -896,8 +963,63 @@ if( $('.exclusive-offer').exists() ){
             // },
         ]
     });
+}
+
+
+//  Переход между карточками ТЦ и таблицей
+if( $('.tc-main').exists() ){
+
+    $('.tc-main-card').each(function(){
+        $(this).on('click', function(){
+
+            var tc_card_id = $(this).attr('data-tc-main-card');
+
+            //  скрыть этот блок
+            $('.tc-main-cards').slideUp();
+
+            // показать таблицу
+            $('.tc-main-table').slideDown();
+
+            //  добавить "active" для таба-сортировки и убрать для текущего active
+            $('.tc-main__filter-result-tabs .filter-result-tabs__tab.active').removeClass('active');
+
+            $('.tc-main__filter-result-tabs .filter-result-tabs__tab[data-tc-main-card="' + tc_card_id + '"]').addClass('active');
+
+
+            window.calc_f_results_toddler();
+        });
+    });
+
+
+    $('.tc-main__back-btn').on('click', function(){
+
+        //  скрыть этот блок
+        $('.tc-main-table').slideUp();
+
+        // показать карточки
+        $('.tc-main-cards').slideDown(); 
+
+    });
 
 }
+
+
+//  Показ планировки для таблиц на странице "Торговый центр"
+//  показать планировку в таблице помещений
+$('.table-tc__onplan-btn').click(function(){
+    var table_plan_btn = $(this),
+        table_plan = $(this).closest('.table-tc').find('.table-tc__plan');
+
+    if(!table_plan_btn.hasClass('active')){
+
+        table_plan_btn.addClass('active');
+        table_plan.fadeIn();
+
+    } else {
+        table_plan_btn.removeClass('active');
+        table_plan.fadeOut();
+    }
+});
 
 
     // $('.parallax').each(function(){
@@ -911,5 +1033,112 @@ if( $('.exclusive-offer').exists() ){
     //   });
     // });
 
+
+
+//  поиск для ТЦ
+$('.tc-main__search-icon').click(function(){
+    var tc_main_show_search_btn = $(this),
+        tc_main_search = $(tc_main_show_search_btn).closest('.tc-main__search');
+
+    if(!tc_main_search.hasClass('active')){
+        tc_main_search.addClass('active');
+    } else {
+        tc_main_search.removeClass('active');
+    }
+});
+
+
+if(client_width < 1024 ){
+    $('.tc-main__filter-result-tabs').slick({
+        infinite: false,
+        centerMode: false,
+        variableWidth: true,
+        slidesToShow: 1,
+        draggable: false,
+        accessibility: true,
+        arrows: false,
+    });
+}
+
+
+//  РОМА!!!
+// Функция показа лоадера
+
+window.play_loader = function(){
+    $('.blog-ctrls__loader').fadeIn();
+};
+// window.play_loader();
+
+//  просто пример использования
+setTimeout(function(){
+    window.play_loader();
+}, 1000)
+
+
+
+
+
+
+//  БПП "Инфраструктура"
+
+if( $('.bpp-inf-list').exists() ) {
+
+
+    if( client_width > 767 ){
+
+        $('.bpp-inf-item').each(function(){
+        
+            //
+            //  Каждая раскрывашка имеет [ data-bpp-inf = "n" ] -- этим можно пользоваться как айдишником
+            //
+        
+        
+            var bpp_item = $(this);
+            bpp_item.on('click', function(){
+            
+                if( $('.bpp-inf-item.active').exists() && !bpp_item.hasClass('active') ){
+                    
+                    $('.bpp-inf-item.active').find('.bpp-inf-item__body').slideUp();
+                    $('.bpp-inf-item.active').removeClass('active');
+                
+                }
+            
+                bpp_item.toggleClass('active');
+                bpp_item.find('.bpp-inf-item__body').slideToggle();
+            });
+        
+        });
+
+    }
+
+
+    //  слайдер для <768
+    if( client_width < 768 ){
+
+        $('.bpp-inf-list__container').slick({
+            infinite: true,
+            centerMode: false,
+            slidesToShow: 1,
+            draggable: false,
+            accessibility: true,
+
+            arrows: true,
+            prevArrow: ".bpp-inf-list__prev",
+            nextArrow: ".bpp-inf-list__next",
+    
+            dots: true,
+            dotsClass: 'bpp-inf-list__dots',
+            appendDots: '.bpp-inf-list',
+        });
+
+    }
+
+}
+
+
+
+//////////////////////////////////////////////
 //  END
 });
+
+

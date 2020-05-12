@@ -35,18 +35,57 @@ html(lang="ru")
 		//- <!-- Страница "Свободное помещение" -->
 		//- include pages/office.pug
 
-		<!-- Страница "Главная" -->
-		include pages/main.pug
+		//- <!-- Страница "Главная" -->
+		//- include pages/main.pug
 
+		//- <!-- Страница "О компании" -->
+		//- include pages/about.pug
+
+		//- <!-- Страница "Торговый центр" -->
+		//- include pages/tc.pug
+
+		//- <!-- Страница "Статьи об аренде" -->
+		//- include pages/articles.pug
+
+		//- <!-- Страница "Статья об аренде" -->
+		//- include pages/article.pug
+
+		//- <!-- Страница "Советы по аренде" -->
+		//- include pages/advices.pug
+
+		//- <!-- Страница "Совет по аренде" -->
+		//- include pages/advice.pug
+
+		//- <!-- Страница "Карта сайта" -->
+		//- include pages/site_map.pug
+
+		//- <!-- Страница "Коммерческая недвижимость" -->
+		//- include pages/commercial.pug
+
+		//- <!-- Страница "Бизнес-парк Полюстрово" -->
+		//- include pages/bpp.pug
+
+		//- <!-- Страница "Сервисы" -->
+		//- include pages/services.pug
+
+		//- <!-- Страница "Вопрос-ответ" -->
+		//- include pages/questions.pug
+
+		<!-- Страница "Отзывы" -->
+		include pages/reviews.pug
 
 		<!-- Footer -->
 		include blocks/footer.pug
 
 		<!-- Подрубка общих скриптов и библ. -->
-		script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js")
 
-		script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+		//- script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+		script(type="application/javascript" src="./js/jquery-3.3.1.min.js" )
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js")
+		script(type="application/javascript" src="./js/select2.min.js")
+
+		//- script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+		script(type="application/javascript" src="./js/jquery-ui.js")
 		script(type="application/javascript" src='./js/slick.min.js')
 
 		script(type="application/javascript" src='./js/filter.js')
@@ -59,3 +98,5 @@ html(lang="ru")
 		<!-- sprite с svg-иконками -->
 		div#teorema_sprite
 			include components/sprite.pug
+
+

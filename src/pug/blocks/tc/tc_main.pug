@@ -1,0 +1,31 @@
+mixin tc_main_card(name,desc,img_name, card_id)
+    a(
+        href="javascript:void(0)" 
+        data-tc-main-card= card_id
+    ).tc-main-card
+        .tc-main-card__img
+            img(
+                src="./img/tc/tc_main_cards/" + img_name + ".jpg"
+            )
+        .tc-main-card__body
+            .tc-main-card__name= name
+            .tc-main-card__desc= desc
+
+section.tc-main
+    .n-container.tc-main__n-container
+        h2 Заголовок
+            span.triangle-red
+
+    
+        .tc-main-cards
+            .tc-main-cards__flex
+                +tc_main_card('Магазины', 'Расположение площадок с товарами широкого потребления', '1', 'shops')
+                +tc_main_card('Гипермаркет «АШАН»', 'Гипермаркет на плане первого этажа торгового центра', '2', 'ashan')
+                +tc_main_card('Кафе и рестораны', 'Расположение точек питания в торговом центре', '3', 'cafe')
+                +tc_main_card('Фитнес-центр', 'Расположение спортивного центра на плане второго этажа', '4', 'fitness')
+                +tc_main_card('Банкоматы', 'Сбербанк, Газпромбанк,  РОСБАНК и  Райффайзенбанк на плане здания', '5', 'bankomat')
+                +tc_main_card('прочие услуги', 'Салон красоты, аптека, ремонтная мастерская и другие услуги', '6', 'others')
+
+        .tc-main-table(style="display: none;")
+            include ../filter/filter_result_tabs_tc.pug
+            include ./tc_table.pug

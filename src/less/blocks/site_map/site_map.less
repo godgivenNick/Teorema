@@ -1,0 +1,125 @@
+.site-map-list {
+
+
+    &__n-container.n-container {
+        display: flex;
+        align-items: flex-start;
+
+        padding-top: 56px;
+        padding-bottom: 64px;
+
+        border-top: 1px solid #DEE1E3;
+        border-bottom: 1px solid #DEE1E3;
+    }
+
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:not(:last-child){
+            margin-right: 32px;
+        }
+
+        min-width: 304px;
+    }
+
+
+    ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-bottom: 56px;
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;
+            color: var(--text_dark_grey);
+            text-decoration: underline;
+            &:hover,
+            &:active {
+                color: var(--teorema_green);
+            }
+
+        }
+    }
+
+
+    ul li.site-map-list__title {
+        margin-bottom: 24px;
+    }
+
+    ul &__title a {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .8px;
+    }
+
+
+    &__child {
+        padding-left: 16px;
+    }
+}
+
+
+@media only screen and (max-width: 1023.98px){
+
+    .site-map-list__col {
+        min-width: 0;
+    }
+
+}
+
+
+@media only screen and (max-width: 767.98px){
+
+    .site-map-list__n-container.n-container {
+        max-width: calc(100% - 16px);
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 32px;
+        padding-bottom: 40px;
+
+        flex-direction: column;
+    }
+
+
+    .site-map-list__col:not(:last-child) {
+        margin-right: 0;
+    }
+
+
+    .site-map-list ul {
+        margin-bottom: 24px;
+    }
+
+    .site-map-list ul a {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+
+    ul .site-map-list__title a {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: .7px;
+    }
+    .site-map-list ul li.site-map-list__title {
+        margin-bottom: 16px;
+    }
+
+
+
+
+}
+    

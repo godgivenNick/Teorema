@@ -61,6 +61,9 @@
                 margin-right: 24px;
             }
 
+            width: 18px;
+            height: 18px;
+            display: flex;
             border: 1px solid transparent;
             border-radius: 50%;
             overflow: hidden;
@@ -90,7 +93,7 @@
     
                 button {
                     background-color: rgba(255,255,255, 1);
-                    border: 1px solid var(--text_dark_grey);
+                    // border: 1px solid var(--text_dark_grey);
                 }
             }
         }
@@ -113,11 +116,53 @@
             align-self: flex-end;
             margin-top: 12px;
         }
+
+
+        img {
+            width: 100%;
+        }
     }
 
 
     //
     .slick-list {
         padding: 0!important;
+    }
+
+
+    &.no-init {
+        .teorema-galery-1__next,
+        .teorema-galery-1__prev,
+        .teorema-galery-1__dots {
+            display: none;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 767.98px){
+
+    .teorema-galery-1__dots {
+        bottom: 8px;
+    }
+
+    .teorema-galery-1__dots li {
+        width: 10px;
+        height: 10px;
+
+        button {
+            width: 8px;
+            height: 8px; 
+        }
+    }
+
+    .teorema-galery-1__slide-desc {
+        display: none;
+    }
+
+
+    .teorema-galery-1__dots li:not(:last-child) {
+        margin-right: 8px;
     }
 }

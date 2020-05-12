@@ -1,0 +1,22 @@
+section.bpp-inf
+    .n-container.bpp-inf__n-container
+        .bpp-inf__title
+            h3 ИНФРАСТРУКТУРА
+                span.triangle-red
+        .bpp-inf__left
+            .bpp-inf-list
+                button.bpp-inf-list__prev
+                    img(src="./img/svg/arrow_left.svg")
+
+                button.bpp-inf-list__next
+                    img(src="./img/svg/arrow_right.svg")
+                .bpp-inf-list__container
+
+                    include ./bpp_inf_items.pug
+                
+        .bpp-inf__right
+            .bpp-inf-map
+                .bpp-inf-map__map
+                    <!-- сюды кладем мапу -->
+                    img(src="./img/bpp/bpp_scheme.svg")
+                .bpp-inf-map__desc Кликните на интересующий объект на схеме или в списке, чтобы получить больше информации
